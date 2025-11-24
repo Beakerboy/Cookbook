@@ -23,8 +23,8 @@ jobs:
           tar -xzf v1.3.0.tar.gz
           rm -rf latex-cookbook-template-1.3.0/images/recipes
           rm -rf latex-cookbook-template-1.3.0/samples
-          cp ./samples latex-cookbook-template-1.3.0
-          cp ./images latex-cookbook-template-1.3.0
+          cp -r ./samples latex-cookbook-template-1.3.0
+          cp -r ./images latex-cookbook-template-1.3.0
 
       - name: Build PDF
         run: |
