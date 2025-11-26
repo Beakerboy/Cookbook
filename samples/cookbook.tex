@@ -3,7 +3,7 @@
 	10pt,
 	twoside
 ]{CookBook}
-
+\usepackage{nicefrac}
 \edef\tsp{t }
 \edef\tbl{T }
 \edef\cu{c }
@@ -228,36 +228,58 @@
 \recipe{%
     image = {../images/recipes/potato_salad.jpg},
 	title = {Roasted Potato Salad with Mustard Dressing},
-	description = {This tangy side dish with sweet onions and honey pairs beautifully with burgers or steak. This salad is best chilled but can stay at room temperature for up to two hours. You can also use sweet-hot mustard in place of the Dijon and honey for a zesty flavor.},
+	description = {This tangy side dish with sweet onions and honey pairs beautifully with burgers or steak. This salad is best chilled but can stay at room temperature for up to two hours. You can also use sweet-hot mustard in place of the Dijon and honey for a zesty flavor. From Cooking Light},
 	serves = {8},
 	ingredients = {
 	    \ingredient{3 pounds small red potatoes, cut into 1-inch pieces}
-		\ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
+		\ingredient{1 \tbl olive oil}
+        \ingredient{2 \tsp freshly ground black pepper}
+        \ingredient{1/2 \tsp kosher salt}
+        \ingredient{2 bacon slices (uncooked), chopped}
+        \ingredient{2 \cu diced Vidalia or other sweet onion (about 2 medium)}
+        \ingredient{2 garlic cloves, minced}
+        \ingredient{3 \tbl Dijon mustard}
+        \ingredient{2 \tbl reduced-fat mayonnaise}
+        \ingredient{1 1/2 \tbl honey}
+        \ingredient{1 1/2 \tbl sherry vinegar}
+        \ingredient{1/4 \cu chopped fresh parsley}
+
 	},
 	instructions = {
 	    \instruction{Preheat oven to 400°}
+		\instruction{Combine first 4 ingredients in a large bowl; toss to coat. Arrange potatoes in a single layer on a jelly-roll pan. Bake at 400° for 40 minutes or until potatoes are tender, stirring once. Transfer potatoes to a large bowl.}
+		\instruction{Cook bacon in a large nonstick skillet over medium heat until crisp. Remove bacon from pan, reserving 1 tablespoon drippings in pan; set bacon aside. Add onion to drippings in pan; cook 15 minutes or until golden brown and caramelized, stirring frequently. Add garlic to pan; cook 30 seconds. Add onion mixture and bacon to potatoes; toss gently. Let stand 15 minutes.}
+		\instruction{Combine mustard, mayonnaise, honey, and vinegar in a small bowl; stir with a whisk. Add mustard mixture and parsley to potato mixture; toss gently.}
 	}
 }
 
 \recipe{%
+    image = {../images/recipes/sourdough_stuffing.jpg},
 	title = {Sourdough Stuffing with Pears and Sausage},
-	description = {Sourdough bread gives the stuffing a tangier flavor than French bread, but you can use the latter in a pinch.},
+	description = {Sourdough bread gives the stuffing a tangier flavor than French bread, but you can use the latter in a pinch. From Cooking Light.},
 	serves = {12},
 	ingredients = {
-	    \ingredient{8 cups (½-inch) cubed sourdough bread (about 12 ounces)}
+	    \ingredient{8 \cu (1/2-inch) cubed sourdough bread (about 12 ounces)}
+        \ingredient{1 pound turkey Italian sausage}
+        \ingredient{Cooking spray}
+        \ingredient{5 \cu chopped onion (about 2 pounds)}
+        \ingredient{2 \cu chopped celery}
+        \ingredient{1 \cu chopped carrot}
+        \ingredient{1 (8-ounce) package presliced mushrooms}
+        \ingredient{2 \cu (1/2-inch) cubed peeled Bartlett pear (about 2 medium)}
+        \ingredient{1 1/2 \tbl chopped fresh basil}
+        \ingredient{2 \tsp chopped fresh tarragon}
+        \ingredient{1 \tsp salt}
+        \ingredient{1 1/2 \cu fat-free, less-sodium chicken broth}
+        \ingredient{1/2 \tsp freshly ground black pepper}
+
 	},
 	instructions = {
 	    \instruction{Preheat oven to 425°}
+		\instruction{Arrange bread in a single layer on a baking sheet. Bake at 425° for 9 minutes or until golden. Place in a large bowl.}
+		\instruction{Remove casings from sausage. Heat a large nonstick skillet over medium-high heat. Coat pan with cooking spray. Add sausage, and cook for 8 minutes or until browned, stirring to crumble. Add sausage to bread cubes, tossing to combine. Set aside.}
+		\instruction{Return pan to medium-high heat. Add onion, celery, and carrot; sauté 10 minutes or until onion begins to brown. Stir in mushrooms; cook 4 minutes. Stir in pear, basil, tarragon, and salt; cook 4 minutes or until pear begins to soften, stirring occasionally. Add pear mixture to bread mixture, tossing gently to combine. Stir in broth and pepper.}
+		\instruction{Place bread mixture in a 13 x 9-inch baking dish coated with cooking spray; cover with foil. Bake at 425° for 20 minutes. Uncover; bake stuffing an additional 15 minutes or until top of stuffing is crisp.}
 	}
 }
 
@@ -426,8 +448,8 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	ingredients = {
 	    \ingredientsection{Brine}
 	    \ingredient{8 \cu apple cider}
-		\ingredient{\frac{2}{3} \cu kosher salt}
-		\ingredient{\frac{2}{3} \cu sugar}
+		\ingredient{\nicefrac{2}{3} \cu kosher salt}
+		\ingredient{\nicefrac{2}{3} \cu sugar}
 		\ingredient{1 \tbl black peppercorns, coarsely crushed}
 		\ingredient{}
 		\ingredient{}
