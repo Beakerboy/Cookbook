@@ -536,7 +536,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 \recipe{%
     layout={simple},
     image={../images/recipes/pulled_chicken.jpg},
-    columnratio={0.35, 0.65},
+    columnratio={0.25, 0.75},
 	title = {Pulled Chicken Sandwiches},
 	indexes = {Sandwich, Chicken, Recipes!Breakfast},
 	description = {Dinner guests are guaranteed to be impressed with this deceptively easy Pulled Chicken Sandwich recipe, which includes a seven-ingredient rub and a simple 15-minute sauce that comes together while the chicken grills. Serve on buns, over fresh greens, or on top of a baked potato for a filling dinner. Cooking Light},
@@ -550,6 +550,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	% spicy = {yes},
 	extrainstructioninfo = {The chicken and sauce can be made up to two days ahead and stored in the refrigerator.},
 	ingredients = {
+	    \begin{minipage}
 	    \ingredientsection{Chicken}
 	    \ingredient{2 tablespoons dark brown sugar}
 	    \ingredient{1 \tsp paprika}
@@ -559,7 +560,9 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	    \ingredient{\nicefrac{1}{8} \tsp salt}
 	    \ingredient{2 pounds skinless, boneless chicken thighs}
 	    \ingredient{Cooking spray}
-		
+		\end{minipage}
+		\hfill
+		\begin{minipage}
 	    \ingredientsection{Sauce}
 	    \ingredient{2 \tsp canola oil}
 	    \ingredient{½ cup finely chopped onion}
@@ -571,11 +574,13 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	    \ingredient{\nicefrac{1}{8} \tsp ground red pepper}
 	    \ingredient{1 cup ketchup}
 	    \ingredient{2 tablespoons cider vinegar}
-		
+		\end{minipage}
+		\hfill
+		\begin{minipage}
 	    \ingredientsection{Remaining ingredients}
 	    \ingredient{8 (1 1/2-ounce) hamburger buns, toasted}
 	    \ingredient{16 hamburger dill chips}
-
+        \end{minipage}
 	},
 	instructions = {
 	    \instruction{Preheat grill to medium-high heat.}
