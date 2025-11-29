@@ -18,7 +18,7 @@
 	\end{tabular}%
 }
 
-\NewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
+\RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
 	{\textit{\small
 		% Trim all values first
 		\def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
