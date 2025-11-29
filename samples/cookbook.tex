@@ -12,20 +12,10 @@
 \RenewDocumentEnvironment{recipeingredients}{}{%
 	\vspace*{-0.01\textheight}
 	\firstingredientsectiontrue
-	\begin{sloppypar}%
-		\raggedright
-		\begin{enumerate}[
-			align=left,
-			leftmargin=10pt,
-			itemindent=0pt,
-			labelwidth=10pt,
-			labelsep=2pt,
-			labelindent=0pt,
-			itemsep=\recipe@ingredientitemsep,
-		]%
-		}{%
-		\end{enumerate}%
-	\end{sloppypar}%
+	\begin{tabular}{|c|c|c|}
+		
+}{%
+	\end{tabular}%
 }
 
 \NewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
@@ -39,18 +29,18 @@
 		\def\ingredient@output{}%
 		% Build the main part (quantity + unit + name) with spaces
 		\ifdefempty{\ingredient@qty}{}{%
-			\edef\ingredient@output{\ingredient@qty}%
+			\edef\ingredient@output{\ingredient@qty & 2em &}%
 		}%
 		\ifdefempty{\ingredient@unit}{}{%
 			\ifdefempty{\ingredient@output}{%
-				\edef\ingredient@output{\ingredient@unit}%
+				\edef\ingredient@output{& 2em & \ingredient@unit}%
 			}{%
 				\edef\ingredient@output{\ingredient@output\space\ingredient@unit}%
 			}%
 		}%
 		\ifdefempty{\ingredient@name}{}{%
 			\ifdefempty{\ingredient@output}{%
-				\edef\ingredient@output{\ingredient@name}%
+				& 2em & \edef\ingredient@output{\ingredient@name}%
 			}{%
 				\edef\ingredient@output{\ingredient@output\space\ingredient@name}%
 			}%
@@ -61,6 +51,7 @@
 		\ifdefempty{\ingredient@note}{}{%
 			, \ingredient@note%
 		}%
+		\\
 	}}%
 }
 \makeatother
