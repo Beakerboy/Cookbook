@@ -8,6 +8,7 @@
 \edef\tbl{T }
 \edef\cu{c }
 
+\makeatletter
 \RenewDocumentEnvironment{recipeingredients}{}{%
 	\vspace*{-0.01\textheight}
 	\firstingredientsectiontrue
@@ -27,7 +28,7 @@
 		\end{enumerate}%
 	\end{sloppypar}%
 }
-
+\makeatother
 \begin{document}
 
 \makecoverpage{
