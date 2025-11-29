@@ -40,7 +40,7 @@
 		}%
 		\ifdefempty{\ingredient@name}{}{%
 			\ifdefempty{\ingredient@output}{%
-				& 2em & \edef\ingredient@output{\ingredient@name}%
+	\edef\ingredient@output{& 2em & \ingredient@name}%
 			}{%
 				\edef\ingredient@output{\ingredient@output\space\ingredient@name}%
 			}%
