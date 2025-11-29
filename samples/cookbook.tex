@@ -21,14 +21,50 @@
 			labelwidth=10pt,
 			labelsep=2pt,
 			labelindent=0pt,
-			label=\protect\textbullet,
 			itemsep=\recipe@ingredientitemsep,
 		]%
 		}{%
 		\end{enumerate}%
 	\end{sloppypar}%
 }
+
+\NewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
+	{\textit{\small
+		% Trim all values first
+		\def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
+		\def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
+		\def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
+		\def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
+		% Initialize accumulator
+		\def\ingredient@output{}%
+		% Build the main part (quantity + unit + name) with spaces
+		\ifdefempty{\ingredient@qty}{}{%
+			\edef\ingredient@output{\ingredient@qty}%
+		}%
+		\ifdefempty{\ingredient@unit}{}{%
+			\ifdefempty{\ingredient@output}{%
+				\edef\ingredient@output{\ingredient@unit}%
+			}{%
+				\edef\ingredient@output{\ingredient@output\space\ingredient@unit}%
+			}%
+		}%
+		\ifdefempty{\ingredient@name}{}{%
+			\ifdefempty{\ingredient@output}{%
+				\edef\ingredient@output{\ingredient@name}%
+			}{%
+				\edef\ingredient@output{\ingredient@output\space\ingredient@name}%
+			}%
+		}%
+		% Output the accumulated main part
+		\ingredient@output%
+		% Add note with comma separator if present
+		\ifdefempty{\ingredient@note}{}{%
+			, \ingredient@note%
+		}%
+	}}%
+}
 \makeatother
+
 \begin{document}
 
 \makecoverpage{
