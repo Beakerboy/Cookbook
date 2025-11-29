@@ -9,51 +9,41 @@
 \edef\cu{c }
 
 \makeatletter
+
 \RenewDocumentEnvironment{recipeingredients}{}{%
-	\vspace*{-0.01\textheight}
-	\firstingredientsectiontrue
-	\begin{tabular}{|r|c|l|}
-		
+    \begin{tabular}{r @{\hspace{1em}} l} % <-- qty + unit&name
 }{%
-	\end{tabular}%
+    \end{tabular}%
 }
 
 \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
-	{\textit{\small
-		% Trim all values first
-		\def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
-		\def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
-		\def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
-		\def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
-		% Initialize accumulator
-		\def\ingredient@output{}%
-		% Build the main part (quantity + unit + name) with spaces
-		\ifdefempty{\ingredient@qty}{}{%
-			\edef\ingredient@output{\ingredient@qty & 2em &}%
-		}%
-		\ifdefempty{\ingredient@unit}{}{%
-			\ifdefempty{\ingredient@output}{%
-				\edef\ingredient@output{& 2em & \ingredient@unit}%
-			}{%
-				\edef\ingredient@output{\ingredient@output\space\ingredient@unit}%
-			}%
-		}%
-		\ifdefempty{\ingredient@name}{}{%
-			\ifdefempty{\ingredient@output}{%
-	\edef\ingredient@output{& 2em & \ingredient@name}%
-			}{%
-				\edef\ingredient@output{\ingredient@output\space\ingredient@name}%
-			}%
-		}%
-		% Output the accumulated main part
-		\ingredient@output%
-		% Add note with comma separator if present
-		\ifdefempty{\ingredient@note}{}{%
-			, \ingredient@note%
-		}%
-		\\
-	}}%
+    % #1 = name
+    % #2 = quantity
+    % #3 = unit
+    % #4 = note
+
+    {\textit{\small
+        % Trim spaces (these are defined by your class)
+        \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
+        \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
+        \def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
+        \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
+
+        % Build second column (unit + name + optional note)
+        \def\ingredient@colB{}%
+        \ifdefempty{\ingredient@unit}{}{\edef\ingredient@colB{\ingredient@unit}}%
+        \ifdefempty{\ingredient@name}{}{
+            \ifdefempty{\ingredient@colB}
+                {\edef\ingredient@colB{\ingredient@name}}
+                {\edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}
+        }%
+        \ifdefempty{\ingredient@note}{}{\edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
+
+        % Now typeset:
+        \ingredient@qty & \ingredient@colB \\
+    }}%
 }
+
 \makeatother
 
 \begin{document}
