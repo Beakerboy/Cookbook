@@ -8,6 +8,26 @@
 \edef\tbl{T }
 \edef\cu{c }
 
+\RenewDocumentEnvironment{recipeingredients}{}{%
+	\vspace*{-0.01\textheight}
+	\firstingredientsectiontrue
+	\begin{sloppypar}%
+		\raggedright
+		\begin{enumerate}[
+			align=left,
+			leftmargin=10pt,
+			itemindent=0pt,
+			labelwidth=10pt,
+			labelsep=2pt,
+			labelindent=0pt,
+			label=\protect\textbullet,
+			itemsep=\recipe@ingredientitemsep,
+		]%
+		}{%
+		\end{enumerate}%
+	\end{sloppypar}%
+}
+
 \begin{document}
 
 \makecoverpage{
