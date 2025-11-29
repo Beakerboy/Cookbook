@@ -44,6 +44,32 @@
     }}%
 }
 
+\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
+	\iffirstingredientsection%
+		\firstingredientsectionfalse%
+	\fi%
+	\item
+	% Check if this is old format (only first argument) or new format
+	\ifblank{#4}{%
+		\ifblank{#3}{%
+			\ifblank{#2}{%
+				% Single argument mode (backward compatibility)
+				{\textit{\small #1}}%
+			}{%
+				% #2 provided, use new format
+				\ingredient@formatmulti{#1}{#2}{}{}%
+			}%
+		}{%
+			% #3 provided, use new format
+			\ingredient@formatmulti{#1}{#2}{#3}{}%
+		}%
+	}{%
+		% #4 provided, use new format
+		\ingredient@formatmulti{#1}{#2}{#3}{#4}%
+	}%
+} % Format individual recipe ingredient entries
+
+
 \makeatother
 
 \begin{document}
