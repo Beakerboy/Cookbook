@@ -322,3 +322,317 @@
 	    \instruction{Fish out the orange zest and bay leaves. Turn the pilaf out onto a platter, fluff with a large fork and garnish with the raisins and pistachios. Serve family-style, right in the middle of the table.}
 	}
 }
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE - Fajitas
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	title = {Beef and Chicken Fajitas with Peppers and Onions},
+	indexes = {Chicken!Beef and Chicken Fajitas with Peppers and Onions, Beef!Beef and Chicken Fajitas with Peppers and Onions, Tex-Mex!Beef and Chicken Fajitas with Peppers and Onions, Grilled!Beef and Chicken Fajitas with Peppers and Onions},
+	description = {From Cooking Light Magazine.},
+	serves = {4},
+	preptime = {30 mins},
+	cookingtime = {20 mins},
+	difficulty = {Beginner},
+	origin = {Tex-Mex},
+	tags = {Chicken, Beef, Grilled, Tex-Mex, Maranade},
+	ingredients = {
+			\ingredientsection{Marinade}
+			\ingredient{¼ \cu olive oil}{}{}{}
+			\ingredient{1 \tsp lime rind, grated}{}{}{}
+			\ingredient{2 ½ \tbl lime juice}
+			\ingredient{2 \tbl Worcestershire sauce}
+			\ingredient{1 ½ \tsp ground cumin}
+			\ingredient{1 \tsp salt}
+			\ingredient{½ \tsp dried oregano}
+			\ingredient{½ \tsp fresh coarse ground black pepper}
+			\ingredient{3 garlic cloves,\\ minced}
+			\ingredient{1 (14 ¼ ounce) can low sodium beef broth}
+
+			\ingredientsection{Fajitas}
+			\ingredient{1 (1-pound) flank steak}
+			\ingredient{1 pound skinned, boned chicken breast}
+			\ingredient{2 red bell peppers,\\ each cut into 12 wedges}
+			\ingredient{2 green bell peppers,\\ each cut into 12 wedges}
+			\ingredient{1 large  Vidalia onion,\\ cut into 16 wedges}
+			\ingredient{cooking spray}
+			\ingredient{16 (6-inch) flour tortillas}
+			\ingredient{salsa}
+			\ingredient{sour cream}
+			\ingredient{cilantro}
+			\ingredient{cheese}
+			\ingredient{guacamole}
+		},
+	instructions = {
+			\instructionsection{Preparing the Marinade}
+			\instruction{Combine first 10 ingredients in a large bowl; set aside.}
+			\instructionsection{Fajitas}
+			\instruction{To prepare fajitas, trim fat from steak. Score a diamond pattern on both sides of the steak. Combine 1½ cups marinade, steak, and chicken in a large zip-top plastic bag. Seal and marinate in refrigerator 4 hours or overnight, turning occasionally. Combine remaining marinade, bell peppers, and onion in a zip-top plastic bag. Seal and marinate in refrigerator for 4 hours or overnight, turning occasionally.}
+			\instruction{Prepare grill.}
+			\instruction{Remove steak and chicken from bag; discard marinade. Remove vegetables from bag; reserve marinade. Place reserved marinade in a small saucepan; set aside. Place steak, chicken, and vegetables on grill rack coated with cooking spray; cook 8 minutes on each side or until desired degree of doneness.}
+			\instruction{Wrap tortillas tightly in foil; place tortilla packet on grill rack the last 2 minutes of grilling time. Bring reserved marinade to a boil. Cut steak and chicken diagonally across the grain into thin slices. Place the steak, chicken, and vegetables on a serving platter; drizzle with reserved marinade.}
+			\instruction{Arrange about 1 ounce steak, about 1 ounce chicken, 3 bell pepper wedges, and 1 onion wedge in a tortilla; top with 1 tablespoon salsa, about 1 teaspoon sour cream, and ½ tablespoon cilantro.
+Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. Serve immediately.}
+		}
+}
+
+\recipe{%
+    % layout={simple},
+    % image={../images/recipes/foo.jpg},
+    columnratio={0.35, 0.65},
+	title = {Apple Cider-Brined Turkey with Savory Herb Gravy},
+	indexes = {Pizza, Eggs, Recipes!Breakfast},
+	description = {Recipe Description here.},
+	serves = {12},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+	tags = {Breakfast, Pizza, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	% extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredientsection{Brine}
+	    \ingredient{8 \cu apple cider}
+		\ingredient{\nicefrac{2}{3} \cu kosher salt}
+		\ingredient{\nicefrac{2}{3} \cu sugar}
+		\ingredient{1 \tbl black peppercorns, coarsely crushed}
+		\ingredient{1 \tbl whole allspice, coarsely crushed}
+		\ingredient{8 1/8-inch-thick slices peeled fresh ginger}
+		\ingredient{6 whole cloves}
+		\ingredient{2 bay leaves}
+		\ingredient{1 12-pound fresh or frozen turkey, thawed}
+		\ingredient{2 oranges, quartered}
+		\ingredient{6 \cu ice}
+		
+		\ingredientsection{Broth}
+        \ingredient{4 garlic cloves}
+        \ingredient{4 sage leaves}
+        \ingredient{4 thyme sprigs}
+        \ingredient{4 parsley sprigs}
+        \ingredient{1 onion, quartered}
+        \ingredient{1 (14-ounce) can fat-free, less-sodium chicken broth}
+        \ingredient{2 \tbl unsalted butter, melted and divided}
+        \ingredient{1 \tsp freshly ground black pepper, divided}
+        \ingredient{½ \tsp salt, divided}
+	},
+	instructions = {
+	    \instruction{To prepare brine, combine first 8 ingredients in a large saucepan; bring to a boil. Cook 5 minutes or until sugar and salt dissolve. Cool completely.}
+		\instruction{Remove giblets and neck from turkey; reserve for Savory Herb Gravy. Rinse turkey with cold water; pat dry. Trim excess fat. Stuff body cavity with orange quarters. Place a turkey-sized oven bag inside a second bag to form a double thickness. Place bags in a large stockpot. Place turkey inside inner bag. Add cider mixture and ice. Secure bags with several twist ties. Refrigerate for 12 to 24 hours, turning occasionally.}
+		\instruction{Remove turkey from bags, and discard brine, orange quarters, and bags. Rinse turkey with cold water; pat dry. Lift wing tips up and over back; tuck under turkey. Tie legs together with kitchen string. Place garlic, sage, thyme, parsley, onion, and broth in the bottom of roasting pan. Place roasting rack in pan. Arrange turkey, breast side down, on roasting rack. Brush turkey back with 1 tablespoon butter; sprinkle with 1/2 teaspoon pepper and 1/4 teaspoon salt. Bake at 450 degrees for 30 minutes.}
+		\instruction{Reduce oven temperature to 350°}
+		\instruction{Remove turkey from oven. Carefully turn turkey over (breast side up) using tongs. Brush turkey breast with 1 tablespoon butter; sprinkle with 1/2 teaspoon pepper and 1/4 teaspoon salt. Bake at 350º for 1 hour and 15 minutes or until a thermometer inserted into meaty part of thigh registers 170º (make sure not to touch bone). (Shield the turkey with foil if it browns too quickly.) Remove turkey from oven; let stand 20 minutes. Reserve pan drippings for Savory Herb Gravy. Discard skin before serving; serve with gravy.}
+	}
+}
+
+\recipe{%
+    columnratio={0.35, 0.65},
+	title = {Savory Herb Gravy},
+    ingredients = {
+		\ingredient{2 \tsp vegetable oil}
+        \ingredient{turkey neck and giblets}
+        \ingredient{12 \cu water}
+        \ingredient{6 black peppercorns}
+        \ingredient{4 parsley sprigs}
+        \ingredient{2 thyme sprigs}
+        \ingredient{1 yellow onion, unpeeled and quartered}
+        \ingredient{1 carrot, cut into 2-inch pieces}
+        \ingredient{1 celery stalk, cut into 2-inch pieces}
+        \ingredient{1 bay leaf}
+		\ingredient{reserved turkey drippings}
+        \ingredient{3 \tbl all-purpose flour}
+        \ingredient{½ \tsp salt}
+        \ingredient{¼ \tsp freshly ground black pepper}
+	},
+	instructions = {
+	    \instruction{Heat oil in large saucepan over medium-high heat. Add turkey neck and giblets; cook 5 minutes, browning on all sides. Add water and next 7 ingredients (through bay leaf); bring to a boil. Reduce heat, and simmer until liquid is reduced to about 2 1/2 cups (about 1 hour). Strain through a colander over a bowl, reserving cooking liquid and turkey neck. Discard remaining solids. Chill cooking liquid completely. Skim fat from surface, and discard. Remove meat from neck; finely chop meat. Discard neck bone. Add neck meat to cooking liquid.}
+		\instruction{Strain the reserved turkey drippings through a colander over a shallow bowl; discard solids. Place strained drippings in freezer for 20 minutes. Skim fat from surface; discard.}
+		\instruction{Place flour in a medium saucepan; add 1/4 cup cooking liquid, stirring with a whisk until smooth. Add remaining cooking liquid, turkey drippings, salt, and pepper; bring to a boil, stirring frequently. Reduce heat; simmer 5 minutes or until slightly thickened.}
+	}
+}
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/herbed_chicken_parmesan.jpg},
+    columnratio={0.35, 0.65},
+	title = {Herbed Chicken Parmesan},
+	indexes = {Herbed Chicken Parmesan, Italian Cuisine, Chicken, Recipes!Entree},
+	description = {This lightened version of an Italian favorite loses some of the fat but none of the flavor. Cooking Light.},
+	serves = {4},
+	preptime = {15 mins},
+	cookingtime = {20 mins},
+	difficulty = {Beginner},
+	origin = {Italy},
+	tags = {Italian, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredient{\nicefrac{1}{3} \cu (1 ½ ounces) grated fresh Parmesan cheese, divided}
+	    \ingredient{¼ \cu dry breadcrumbs}
+	    \ingredient{1 \tbl minced fresh parsley}
+	    \ingredient{½ \tsp dried basil}
+	    \ingredient{¼ \tsp salt, divided}
+	    \ingredient{1 large egg white, lightly beaten}
+	    \ingredient{1 pound chicken breast tenders}
+	    \ingredient{1 \tbl butter}
+	    \ingredient{1 ½ \cu bottled fat-free tomato-basil pasta sauce (such as Muir Glen Organic)}
+	    \ingredient{2 \tsp balsamic vinegar}
+	    \ingredient{¼ \tsp black pepper}
+	    \ingredient{\nicefrac{1}{3} \cu (1 ½ ounces) shredded provolone cheese}
+		\ingredient{orzo}
+		\ingredient{broccoli}
+		\ingredient{lemon zest}
+		\ingredient{garlic}
+	},
+	instructions = {
+	    \instruction{Preheat broiler.}
+	    \instruction{Combine 2 tablespoons of Parmesan, breadcrumbs, parsley, basil, and 1/8 teaspoon salt in a shallow dish. Place egg white in a shallow dish. Dip each chicken tender in egg white; dredge in the breadcrumb mixture. Melt butter in a large nonstick skillet over medium-high heat. Add chicken; cook 3 minutes on each side or until done. Set aside.}
+	    \instruction{Combine 1/8 teaspoon salt, pasta sauce, vinegar, and pepper in a microwave-safe bowl. Cover with plastic wrap; vent. Microwave sauce mixture at HIGH 2 minutes or until thoroughly heated. Pour the sauce over chicken in pan. Sprinkle evenly with the remaining Parmesan and provolone cheese. Wrap handle of pan with foil, and broil 2 minutes or until the cheese melts.}
+	}
+}
+
+\recipe{%
+    layout={simple},
+    image={../images/recipes/pulled_chicken.jpg},
+    columnratio={0.25, 0.75},
+	title = {Pulled Chicken Sandwiches},
+	indexes = {Sandwich, Chicken, Recipes!Breakfast},
+	description = {Dinner guests are guaranteed to be impressed with this deceptively easy Pulled Chicken Sandwich recipe, which includes a seven-ingredient rub and a simple 15-minute sauce that comes together while the chicken grills. Serve on buns, over fresh greens, or on top of a baked potato for a filling dinner. Cooking Light},
+	serves = {8},
+	preptime = {20 mins},
+	cookingtime = {20 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+	tags = {Sandwich, Chicken},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {The chicken and sauce can be made up to two days ahead and stored in the refrigerator.},
+	ingredients = {
+	    \begin{minipage}[t]{.32\textwidth}
+	    \ingredientsection{Chicken}
+	    \ingredient{2 \tbl dark brown sugar}
+	    \ingredient{1 \tsp paprika}
+	    \ingredient{¾ \tsp ground cumin}
+	    \ingredient{½ \tsp ground chipotle chile pepper}
+	    \ingredient{¼ \tsp ground ginger}
+	    \ingredient{\nicefrac{1}{8} \tsp salt}
+	    \ingredient{2 pounds skinless, boneless chicken thighs}
+	    \ingredient{Cooking spray}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.32\textwidth}
+	    \ingredientsection{Sauce}
+	    \ingredient{2 \tsp canola oil}
+	    \ingredient{½ \cu finely chopped onion}
+	    \ingredient{1 \tbl dark brown sugar}
+	    \ingredient{1 \tsp chili powder}
+	    \ingredient{½ \tsp garlic powder}
+	    \ingredient{½ \tsp dry mustard}
+	    \ingredient{¼ \tsp ground allspice}
+	    \ingredient{\nicefrac{1}{8} \tsp ground red pepper}
+	    \ingredient{1 \cu ketchup}
+	    \ingredient{2 \tbl cider vinegar}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.32\textwidth}
+	    \ingredientsection{Remaining ingredients}
+	    \ingredient{8 (1 ½-ounce) hamburger buns, toasted}
+	    \ingredient{16 hamburger dill chips}
+        \end{minipage}
+	},
+	instructions = {
+	    \instruction{Preheat grill to medium-high heat.}
+	    \instruction{To prepare chicken, combine first 6 ingredients; rub evenly over chicken. Place chicken on a grill rack coated with cooking spray; cover and grill 15 minutes or until a thermometer registers 180°, turning occasionally. Let stand for 5 minutes. Shred with 2 forks.}
+	    \instruction{To prepare sauce, while chicken grills, heat canola oil in a medium saucepan over medium heat. Add onion; cook for 5 minutes or until tender, stirring occasionally. Stir in 1 tablespoon sugar and next 5 ingredients (through ground red pepper); cook 30 seconds. Stir in ketchup and vinegar; bring to a boil. Reduce heat, and simmer 10 minutes or until slightly thickened, stirring occasionally. Stir in chicken; cook 2 minutes.}
+	    \instruction{Place 1/3 cup chicken mixture on bottom half of each bun; top each with 2 pickle chips and top of bun.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/beef_daube_provencal.jpg},
+    columnratio={0.35, 0.65},
+	title = {Beef Daube Procençal},
+	indexes = {Beef, Stew, Recipes!Entree, French Cuisine},
+	description = {Best Beef Recipe. This classic French braised beef, red wine, and vegetable stew is simple and delicious. It stands above all of our other beef recipes because it offers the homey comfort and convenience of pot roast yet is versatile and sophisticated enough for entertaining. Garnish with chopped fresh thyme.},
+	serves = {12},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Breakfast, Pizza, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {To make in a slow cooker, prepare through Step Place beef mixture in an electric slow cooker. Cover and cook on HIGH for 5 hours.},
+	ingredients = {
+	    \ingredient{2 \tsp olive oil}
+	    \ingredient{12 garlic cloves, crushed}
+	    \ingredient{1 (2-pound) boneless chuck roast, trimmed and cut into 2-inch cubes}
+	    \ingredient{1 ½ \tsp salt, divided}
+	    \ingredient{½ \tsp freshly ground black pepper, divided}
+	    \ingredient{1 \cu red wine}
+	    \ingredient{2 \cu chopped carrot}
+	    \ingredient{1 ½ \cu chopped onion}
+	    \ingredient{½ cup less-sodium beef broth}
+	    \ingredient{1 \tbl tomato paste}
+	    \ingredient{1 \tsp chopped fresh rosemary}
+	    \ingredient{1 \tsp chopped fresh thyme}
+	    \ingredient{Dash of ground cloves}
+	    \ingredient{1 (14.5-ounce) can diced tomatoes, undrained}
+	    \ingredient{1 bay leaf}
+	    \ingredient{3 \cu hot cooked medium egg noodles (about 4 cups uncooked noodles)}
+	    \ingredient{Chopped fresh thyme (optional)}
+	},
+	instructions = {
+	    \instruction{Preheat oven to 300°.}
+		\instruction{Heat olive oil in a small Dutch oven over low heat. Add garlic to pan; cook for 5 minutes or until garlic is fragrant, stirring occasionally. Remove garlic with a slotted spoon; set aside. Increase heat to medium-high. Add beef to pan. Sprinkle beef with ½ teaspoon salt and ¼ teaspoon black pepper. Cook 5 minutes, browning on all sides. Remove beef from pan. Add wine to pan, and bring to a boil, scraping pan to loosen browned bits. Add garlic, beef, remaining 1 teaspoon salt, remaining ¼ teaspoon pepper, carrot, and next 8 ingredients (through bay leaf) to pan; bring to a boil.}
+		\instruction{Cover and bake at 300° for 2 ½ hours or until beef is tender. Discard bay leaf. Serve over noodles. Garnish with chopped fresh thyme, if desired.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/beef_rendang.jpg},
+    columnratio={0.35, 0.65},
+	title = {Beef Rendang},
+	indexes = {Beef, Stew, Recipes!Entree, Malasian Cuisine},
+	description = {This rich Malay curry features aromatic lemongrass, garlic, ginger, and cinnamon. Make sure the beef mixture cooks at a low simmer so the sauce doesn't scorch and the meat slowly becomes tender. If you can't find unsweetened coconut, use sweetened flaked coconut and omit the added sugar.},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Breakfast, Pizza, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredient{½ \cu chopped shallots}
+        \ingredient{1/3 \cu thinly sliced peeled ginger}
+        \ingredient{1 ½ \tbl minced garlic (about 5 cloves)}
+        \ingredient{2 \tbl chili garlic sauce (such as Lee Kum Kee)}
+        \ingredient{1 ½ \tsp ground turmeric}
+        \ingredient{1 ¼ \tsp salt}
+        \ingredient{¼ \tsp ground cinnamon}
+        \ingredient{6 whole cloves}
+        \ingredient{1 to 2 serrano chiles, chopped}
+        \ingredient{1 (14-ounce) can light coconut milk, divided}
+        \ingredient{2/3 \cu flaked unsweetened coconut, toasted}
+        \ingredient{1 \tsp grated lime rind}
+        \ingredient{2 \tbl fresh lime juice}
+        \ingredient{2 \tsp sugar}
+        \ingredient{2 (3-inch) fresh lemongrass stalks, crushed}
+        \ingredient{2 pounds boneless chuck roast, trimmed and cut into 1-inch cubes}
+        \ingredient{1 (14-ounce) can fat-free, less-sodium chicken broth}
+        \ingredient{4 \cu hot cooked basmati rice}
+
+	},
+	instructions = {
+	    \instruction{Place first 9 ingredients in a food processor or mini chopper. Add ¼ cup coconut milk; process until smooth. Spoon mixture into a bowl; set aside.}
+		\instruction{Place 3 tablespoons coconut milk and flaked coconut in food processor; process until a smooth paste forms.}
+		\instruction{Heat a large saucepan over medium-high heat. Add shallot mixture; cook 1 minute or until fragrant, stirring constantly. Stir in remaining coconut milk, rind, and next 5 ingredients (through broth); bring to a boil. Cover, reduce heat to medium-low, and simmer 90 minutes or until beef is tender, stirring occasionally. Discard lemongrass. Stir in flaked coconut mixture; simmer 10 minutes or until liquid almost evaporates. Serve over rice.}
+	}
+}
