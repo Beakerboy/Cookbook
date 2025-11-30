@@ -19,10 +19,10 @@
 }
 
 \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
-    \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
+    \def\ingredient@name{Butter}
     \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
-    \def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
-    \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
+    \def\ingredient@unit{Large}
+    \def\ingredient@note{cracked}
 
     \def\ingredient@colB{}%
     \ifdefempty{\ingredient@unit}{}{\def\ingredient@colB{\ingredient@unit}}%
