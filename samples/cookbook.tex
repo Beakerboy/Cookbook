@@ -25,11 +25,11 @@
     \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
 
     \def\ingredient@colB{}%
-    \ifdefempty{\ingredient@unit}{}{\edef\ingredient@colB{\ingredient@unit}}%
-    \ifdefempty{\ingredient@colB}{\edef\ingredient@colB{\ingredient@name}}{%
-      \edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}%
+    \ifdefempty{\ingredient@unit}{}{\def\ingredient@colB{\ingredient@unit}}%
+    \ifdefempty{\ingredient@colB}{\def\ingredient@colB{\ingredient@name}}{%
+      \def\ingredient@colB{\ingredient@colB\space\ingredient@name}}%
     \ifdefempty{\ingredient@note}{}{%
-      \edef\ingredient@colB{\ingredient@colB,\ \ingredient@note}}%
+      \def\ingredient@colB{\ingredient@colB,\ \ingredient@note}}%
 
     \ingredient@qty & \ingredient@colB \\
 }
