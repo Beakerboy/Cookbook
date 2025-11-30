@@ -37,7 +37,7 @@
         \ifdefempty{\ingredient@colB}{\edef\ingredient@colB{\ingredient@name}}{\edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}
         \ifdefempty{\ingredient@note}{}{\edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
         % Now typeset:
-        1 & cup meat\\
+        \ingredient@qty & \ingredient@colB \\
     }}%
 }
 
