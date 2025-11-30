@@ -29,7 +29,7 @@
     \ifdefempty{\ingredient@colB}{\edef\ingredient@colB{\ingredient@name}}{%
       \edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}%
     \ifdefempty{\ingredient@note}{}{%
-      \edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
+      \edef\ingredient@colB{\ingredient@colB,\ \ingredient@note}}%
 
     \ingredient@qty & \ingredient@colB \\
 }
