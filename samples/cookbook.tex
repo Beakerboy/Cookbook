@@ -40,10 +40,8 @@
                 {\edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}
         }%
         \ifdefempty{\ingredient@note}{}{\edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
-
         % Now typeset:
-        \ingredient@qty & \ingredient@colB \\%
-		\hline%
+        \ingredient@qty & \ingredient@colB \\
     }}%
 }
 
