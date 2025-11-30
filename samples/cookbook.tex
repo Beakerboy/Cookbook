@@ -8,6 +8,30 @@
 \edef\tbl{T }
 \edef\cu{c }
 
+\makeatletter
+
+\RenewDocumentEnvironment{recipeingredients}{}{%
+    \begin{tabular}{|r|@{\hspace{3em}} l|} % <-- qty + unit&name
+	\hline
+}{%
+    \hline
+    \end{tabular}%
+}
+
+\RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
+    #2 & #3\ #1,\ #4 \\
+}
+
+\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
+	\iffirstingredientsection%
+		\firstingredientsectionfalse%
+	\fi%
+	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
+}
+
+
+\makeatother
+
 \begin{document}
 
 \makecoverpage{
