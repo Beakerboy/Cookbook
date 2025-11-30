@@ -33,12 +33,8 @@
 
         % Build second column (unit + name + optional note)
         \def\ingredient@colB{}%
-        \ifdefempty{\ingredient@unit}{}{\edef\ingredient@colB{\ingredient@unit}}%
-        \ifdefempty{\ingredient@name}{}{%
-            \ifdefempty{\ingredient@colB}
-                {\edef\ingredient@colB{\ingredient@name}}
-                {\edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}
-        }%
+        \ifdefempty{\ingredient@unit}{}{\edef\ingredient@colB{\ingredient@unit}}
+        \ifdefempty{\ingredient@colB}{\edef\ingredient@colB{\ingredient@name}}{\edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}
         \ifdefempty{\ingredient@note}{}{\edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
         % Now typeset:
         1 & cup meat\\
