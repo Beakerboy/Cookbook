@@ -11,8 +11,10 @@
 \makeatletter
 
 \RenewDocumentEnvironment{recipeingredients}{}{%
-    \begin{tabular}{|r |@{\hspace{3em}} l|} % <-- qty + unit&name
+    \begin{tabular}{|r|@{\hspace{3em}} l|} % <-- qty + unit&name
+	\hline
 }{%
+    \hline
     \end{tabular}%
 }
 
