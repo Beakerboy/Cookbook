@@ -19,26 +19,23 @@
 }
 
 \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
-    % #1 = name
-    % #2 = quantity
-    % #3 = unit
-    % #4 = note
+  \begingroup
+  \textit{\small
+    \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
+    \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
+    \def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
+    \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
 
-    {\textit{\small
-        % Trim spaces (these are defined by your class)
-        \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
-        \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
-        \def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
-        \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
+    \def\ingredient@colB{}%
+    \ifdefempty{\ingredient@unit}{}{\edef\ingredient@colB{\ingredient@unit}}%
+    \ifdefempty{\ingredient@colB}{\edef\ingredient@colB{\ingredient@name}}{%
+      \edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}%
+    \ifdefempty{\ingredient@note}{}{%
+      \edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
 
-        % Build second column (unit + name + optional note)
-        \def\ingredient@colB{}%
-        \ifdefempty{\ingredient@unit}{}{\edef\ingredient@colB{\ingredient@unit}}
-        \ifdefempty{\ingredient@colB}{\edef\ingredient@colB{\ingredient@name}}{\edef\ingredient@colB{\ingredient@colB\space\ingredient@name}}
-        \ifdefempty{\ingredient@note}{}{\edef\ingredient@colB{\ingredient@colB, \ingredient@note}}%
-        % Now typeset:
-        \ingredient@qty & \ingredient@colB \\
-    }}%
+    \ingredient@qty & \ingredient@colB \\
+  }
+  \endgroup
 }
 
 \RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
