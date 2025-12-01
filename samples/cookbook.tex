@@ -11,26 +11,25 @@
 \makeatletter
 
 \RenewDocumentEnvironment{recipeingredients}{}{%
-    \begin{tabular}{|r|@{\hspace{3em}} l|} % <-- qty + unit&name
-	\hline
+    \firstingredientsectiontrue
+    \begin{tabular}{r @{\hspace{3em}} l}
 }{%
-    \hline
-    \end{tabular}%
+    \end{tabular}
 }
 
 \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
-    #2 & #3\ #1,\ #4 \\
+    #2 & #3\ #1\ifdefempty{#4}{}{, #4} \\
 }
 
-\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
-	\iffirstingredientsection%
-		\firstingredientsectionfalse%
-	\fi%
-	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
+\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{%
+    \iffirstingredientsection
+        \firstingredientsectionfalse
+    \fi
+    \ingredient@formatmulti{#1}{#2}{#3}{#4}%
 }
-
 
 \makeatother
+
 
 \begin{document}
 
