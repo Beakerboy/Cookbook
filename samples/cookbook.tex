@@ -11,36 +11,22 @@
 \makeatletter
 
 \RenewDocumentEnvironment{recipeingredients}{}{%
-    \begin{tabular}{|r|@{\hspace{3em}} l|} % <-- qty + unit&name
-	\hline
+    \firstingredientsectiontrue
+    \begin{tabular}{r @{\hspace{3em}} l}
 }{%
-    \hline
-    \end{tabular}%
+    \end{tabular}
 }
 
 \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
-    \def\ingredient@name{Butter}
-    \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
-    \def\ingredient@unit{Large}
-    \def\ingredient@note{cracked}
-
-    \def\ingredient@colB{}%
-    \ifdefempty{\ingredient@unit}{}{\def\ingredient@colB{\ingredient@unit}}%
-    \ifdefempty{\ingredient@colB}{\def\ingredient@colB{\ingredient@name}}{%
-      \def\ingredient@colB{\ingredient@colB\space\ingredient@name}}%
-    \ifdefempty{\ingredient@note}{}{%
-      \def\ingredient@colB{\ingredient@colB,\ \ingredient@note}}%
-
-    \ingredient@qty & \ingredient@colB \\
+    #2 & #3\ #1\ifdefempty{#4}{}{, #4} \\
 }
 
-\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
-	\iffirstingredientsection%
-		\firstingredientsectionfalse%
-	\fi%
-	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
+\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{%
+    \iffirstingredientsection
+        \firstingredientsectionfalse
+    \fi
+    \ingredient@formatmulti{#1}{#2}{#3}{#4}%
 }
-
 
 \makeatother
 
