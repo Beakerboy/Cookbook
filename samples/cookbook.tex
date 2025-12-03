@@ -18,17 +18,18 @@
 
 \RenewDocumentCommand{\ingredientsection}{m}{%
 	\iffirstingredientsection%
-		\firstingredientsectionfalse%
+		\caption{#1}
+		\begin{tabular}{ r @{\hspace{2em}}l }%
 	\else%
-		\vspace{0.01\textheight}%
+		\end{tabular}
+		\caption{#1}
+		\begin{tabular}{ r @{\hspace{2em}}l }%
 	\fi%
-	\caption{#1}\par\vspace{0.005\textheight}%
 } % Format ingredient section headers with spacing
 
 \RenewDocumentEnvironment{recipeingredients}{}{%
     \vspace*{-0.01\textheight}
 	\firstingredientsectiontrue
-	\begin{tabular}{ r @{\hspace{2em}}l }%
 }{%
     \end{tabular}%
 }
@@ -36,6 +37,7 @@
 \RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
 	\iffirstingredientsection%
 		\firstingredientsectionfalse%
+		\begin{tabular}{ r @{\hspace{2em}}l }%
 	\fi%
 	\item
 	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
