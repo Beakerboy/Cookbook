@@ -16,40 +16,38 @@
 
 \makeatletter
 
-\RenewDocumentCommand{\ingredientsection}{m}{%
-	\iffirstingredientsection%
-	    \firstingredientsectionfalse
-	\else%
-		\end{tabular}
-		\end{table}
-	\fi%
-	\begin{table}
-		\centering
-		\caption{#1}
-		\begin{tabular}{ r @{\hspace{2em}}l }
-} % Format ingredient section headers with spacing
-
-\RenewDocumentEnvironment{recipeingredients}{}{%
-    \vspace*{-0.01\textheight}
-	\firstingredientsectiontrue
-}{%
+% ========== recipeingredients environment ==========
+% Starts a single tabular covering the whole recipe ingredient block
+\RenewDocumentEnvironment{recipeingredients}{}
+{
+    \vspace*{-0.01\textheight}% your spacing (optional)
+    \firstingredientsectiontrue
+    \begin{tabular}{r @{\hspace{2em}} l}
+}
+{
     \end{tabular}
-	\end{table}
 }
 
-\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
-	\iffirstingredientsection%
-		\firstingredientsectionfalse%
-		\begin{table}
-		    \begin{tabular}{ r @{\hspace{2em}}l }
-	\fi%
-	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
+% ========== ingredientsection ==========
+% Prints a header row inside the tabular
+\RenewDocumentCommand{\ingredientsection}{m}{%
+    % Insert space before all but first section
+    \iffirstingredientsection
+        \firstingredientsectionfalse
+    \else
+        \\[0.8em]  % vertical space between sections
+    \fi
+    \multicolumn{2}{l}{\bfseries #1} \\
 }
 
-\RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
+% ========== ingredient ==========
+% Adds a normal ingredient row
+\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{%
     \textit{\small #2} & #3 #1 #4 \\
 }
+
 \makeatother
+
 
 \begin{document}
 
