@@ -13,6 +13,14 @@
 % 1/6-⅙
 % 1/8-⅛ 3/8-⅜
 
+\ReewDocumentCommand{\ingredient}{m O{} O{} O{}}{
+	\iffirstingredientsection%
+		\firstingredientsectionfalse%
+	\fi%
+	\item
+	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
+} % Format individual recipe ingredient entries
+
 \begin{document}
 
 \makecoverpage{
