@@ -19,16 +19,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-extra texlive-fonts-extra texlive-luatex texlive-lang-french latexmk fonts-noto-color-emoji
-          wget https://github.com/AshDevFr/latex-cookbook-template/archive/refs/tags/v1.3.0.tar.gz
-          tar -xzf v1.3.0.tar.gz
-          rm -rf latex-cookbook-template-1.3.0/images/recipes
-          rm -rf latex-cookbook-template-1.3.0/samples
-          cp -r ./samples latex-cookbook-template-1.3.0
-          cp -r ./images latex-cookbook-template-1.3.0
+          wget https://github.com/AshDevFr/latex-cookbook-template/archive/refs/tags/v2.0.0.tar.gz
+          tar -xzf v2.0.0.tar.gz
+          mv latex-cookbook-template-2.0.0 latex-cookbook-template
+          rm -rf latex-cookbook-template/images/recipes
+          rm -rf latex-cookbook-template/samples
+          cp -r ./samples latex-cookbook-template
+          cp -r ./images latex-cookbook-template
 
       - name: Build PDF
         run: |
-          cd latex-cookbook-template-1.3.0
+          cd latex-cookbook-template
           chmod +x build.sh
           ./build.sh
 
@@ -36,6 +37,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cookbook-pdfs-pr-${{ github.event.pull_request.number }}
-          path: dist/*.pdf
+          path: latex-cookbook-template/dist/*.pdf
           retention-days: 7
           if-no-files-found: error

@@ -3,6 +3,15 @@
 	10pt,
 	twoside
 ]{CookBook}
+\edef\tsp{t}
+\edef\tbl{T}
+\edef\cu{c}
+
+% 1/2-½
+% 1/3-⅓ 2/3-⅔
+% 1/4-¼ 3/4-¾
+% 1/6-⅙
+% 1/8-⅛ 3/8-⅜
 
 \begin{document}
 
@@ -62,11 +71,12 @@
 %----------------------------------------------------------------------------------------
 
 \recipe{%
-	layout={simple},
+	% layout={simple},
+	image = {../images/recipes/sausage_casserole.jpeg},
 	imageheight={0.25\paperheight},
 	imageoverlayspace={0.2\paperheight},
 	title = {Breakfast Sausage Casserole},
-	description = {This satisfying recipe is perfect to make for weekend guests. Assemble and refrigerate the casserole the night before, and just pop it in the oven the next morning. Look for turkey sausage near other breakfast-style sausage in the frozen foods section.},
+	description = {This satisfying recipe is perfect to make for weekend guests. Assemble and refrigerate the casserole the night before, and just pop it in the oven the next morning. Look for turkey sausage near other breakfast-style sausage in the frozen foods section. From Cooking Light.},
 	serves = {8},
 	preptime = {15 mins},
 	cookingtime = {65 mins},
@@ -75,10 +85,19 @@
 	tags = {Breakfast},
 	indexes = {Breakfast Casserole, Recipes!Breakfast, American cuisine},
 	ingredients = {
-	    \ingredient{1 (16-ounce) package sage sausage}
+	    \ingredient{sage sausage}[1][(16-ounce) package]
+		\ingredient{sourdough bread}[8][(1½-ounce) slices][cut into ½-inch cubes (about 8 cups)]
+		\ingredient{shredded sharp cheddar cheese}[⅔][\cu (about 2½ ounces)]
+		\ingredient{1\% low-fat milk}[3][\cu][divided]
+		\ingredient{egg substitute}[1][\cu]
+		\ingredient{Dijon mustard}[1][\tbl]
+		\ingredient{condensed 30\% reduced-sodium, 98\% fat-free cream of mushroom soup}[1][(10.75-ounce) can][undiluted]
 		},
 	instructions = {
 	    \instruction{Heat a large nonstick skillet over medium-high heat. Coat pan with cooking spray. Add sausage to pan, cook 5 minutes or until browned, stirring well to crumble.}
+		\instruction{Arrange bread in a 13 x 9-inch baking dish coated with cooking spray. Top evenly with cooked turkey sausage and cheddar cheese. Combine 2½ cups milk, egg substitute, and Dijon mustard, stirring with a whisk. Pour over bread mixture in dish. Cover and refrigerate 8 hours or overnight.}
+		\instruction{Preheat oven to 350°.}
+		\instruction{Uncover casserole. Combine remaining ½ cup milk and cream of mushroom soup, stirring with a whisk. Pour over bread mixture. Bake at 350° for 1 hour and 5 minutes or until set and lightly browned. Let stand 15 minutes before serving.}
 	}
 }
 
@@ -94,43 +113,72 @@
     image = {../images/recipes/hash.jpeg},
 	title = {Bacon, Ham, and Egg Hash},
 	indexes = {Hash, Recipes!Breakfast, Potato, Eggs, Quick meals},
-	description = {Golden, crispy French toast with a custardy center. A weekend breakfast favorite that's easy to make yet feels special. Perfect with maple syrup and fresh berries.},
+	description = {The bacon seasons the potatoes in this hearty skillet meal. Make it for a weekend breakfast, and serve with fresh fruit.},
 	serves = {4},
-	preptime = {10 mins},
-	cookingtime = {15 mins},
+	preptime = {5 mins},
+	cookingtime = {30 mins},
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Breakfast, Quick},
 	ingredients = {
-			\ingredientsection{Custard Mixture}
-			\ingredient{4 large eggs}
-			\ingredient{1 cup whole milk}
-			\ingredient{2 tbsp granulated sugar}
-			\ingredient{1 tsp vanilla extract}
-			\ingredient{1 tsp ground cinnamon}
-			\ingredient{1/4 tsp ground nutmeg}
-			\ingredient{Pinch of salt}
-
-			\ingredientsection{Cooking and Serving}
-			\ingredient{8 thick slices bread (brioche, challah, or white bread)\note{Day-old bread works best as it absorbs the custard mixture without falling apart. Brioche or challah bread creates the most luxurious French toast, but any thick-sliced bread will work.}}
-			\ingredient{2-3 tbsp butter for cooking}
-			\ingredient{Maple syrup, for serving}
-			\ingredient{Fresh berries, for serving}
-			\ingredient{Powdered sugar for dusting (optional)}
+			\ingredient{bacon}[4][slices]
+			\ingredient{potatoes}[2][large][peeled and chopped (2½ \cu)]
+			\ingredient{cooking oil}
+			\ingredient{cooked ham}[8][oz][coarsely chopped]
+			\ingredient{eggs}[5][][lightly beaten]
+			\ingredient{salt}[¼][\tsp]
+			\ingredient{ground black pepper}[⅛][\tsp]
+			\ingredient{shredded cheddar cheese}[¼][\cu][(1 oz.)]
 		},
 	instructions ={
-			\instruction{In a shallow bowl or baking dish, whisk together eggs, milk, sugar, vanilla extract, cinnamon, nutmeg, and salt until well combined.}
-			\instruction{Heat a large skillet or griddle over medium heat and add 1 tablespoon of butter.}
-			\instruction{Dip each bread slice into the custard mixture, allowing it to soak for about 5 seconds per side. Don't oversoak or the bread will fall apart.}
-			\instruction{Place soaked bread slices in the heated skillet. Cook for 2-3 minutes per side until golden brown and crispy on the outside.}
-			\instruction{Transfer cooked French toast to a plate and keep warm. Repeat with remaining bread slices, adding more butter to the pan as needed.}
-			\instruction{Serve immediately topped with maple syrup, fresh berries, and a dusting of powdered sugar if desired.}
+			\instruction{In a large skillet, cook bacon until crisp, reserving fat. Remove bacon from skillet; drain well on paper towels and crumble. Set aside.}
+			\instruction{Add potatoes to the reserved fat and add additional oil if there's not enough fat. Cook, uncovered, over medium heat about 10 minutes or until potatoes are almost tender and browned, turning frequently. Add the ham. Cook about 5 minutes more or until potatoes are tender, stirring gently.}
+			\instruction{In a small bowl, combine eggs, salt and black pepper. Pour egg mixture over potato-ham mixture. Cook over medium heat, without stirring, until egg mixture begins to set on the bottom and around edge. Using a spatula or a large spoon, lift and fold the partially cooked egg mixture so that the uncooked portion flows underneath.}
+			\instruction{Continue cooking over medium heat until egg mixture is cooked through but is still glossy and moist. Sprinkle with cheese and reserved bacon. Remove from heat. Cover and let stand for 1 to 2 minutes or until cheese is melted.}
 		}
 }
 
-\makeimagepage{
-	image={../images/recipes/french-toast.jpg},
-	caption = {Classic French Toast},
+\recipe{%
+    %layout={simple},
+    image={../images/recipes/gravy_pizza.png},
+    columnratio={0.35, 0.65},
+	title = {Gravy Pizza},
+	indexes = {Pizza, Eggs, Recipes!Breakfast},
+	description = {Recipe Description here.},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Breakfast, Pizza, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredientsection{Crust}
+	    \ingredient{four}[2 ¼][\cu][about 307g]
+		\ingredient{baking powder}[2][\tsp]
+		\ingredient{baking soda}[½][\tsp]
+		\ingredient{salt}[1][\tsp]
+		\ingredient{cold butter}[12][\tbl]
+		\ingredient{buttermilk}[1][\cu]
+
+		\ingredientsection{Gravy}
+		\ingredient{sausage}[½][lb]
+		\ingredient{whole milk}[1½][\cu]
+		\ingredient{flour}[⅙][\cu]
+		\ingredient{salt and pepper}
+
+		\ingredientsection{Pizza}
+		\ingredient{eggs}[4][][scrambled]
+		\ingredient{shredded cheddar cheese}[½][\cu]
+	},
+	instructions = {
+	    \instruction{Mix together dry ingredients and cut in the cold butter. Gently fold in the buttermilk. Scoop dough into the counter top and combine by pressing into a circle, and folding, three times. Press out to a 14" circle on a flour-dusted pizza pan. Bake crust for 15 minutes at 425°F.}
+		\instruction{Cook sausage and stir to crumble. Add milk and stir. Strain out the sausage. Add flour to pan and add the milk. Stir to avoid lumps. Cook until thickened.}
+		\instruction{Pour gravy over crust. Sprinkle with cheese. Cover with sausage crumbles. Evenly crumble scrambled egg on top.}
+		\instruction{Bake for another 10 minutes until hot and cheese has melted.}
+	}
 }
 
 %----------------------------------------------------------------------------------------------------------
@@ -165,17 +213,17 @@
 	tags = {Mexican, Quick, Vegetarian},
 	vegetarian = {yes},
 	ingredients = {
-			\ingredient{2 tablespoon vegtable oil}
-			\ingredient{4 ears fresh corn (about 3 cups) or 2 cans}
-			\ingredient{kosher salt}
-			\ingredient{2 ounces fet or corija cheese, finely crumbled}
-			\ingredient{1/2 cup finely sliced scallions}
-			\ingredient{1/2 cup cilantro, finely chopped}
-			\ingredient{1 jalapeño pepper, finely chopped }
-			\ingredient{2 tablespoons mayonnaise}
-			\ingredient{1 tablespoon fresh lime juice}
-			\ingredient{chili powder to taste}
-		},
+		\ingredient{vegtable oil}[2][\tbl]
+		\ingredient{fresh corn (about 3 \cu) or 2 cans}[4][ears]
+	    \ingredient{kosher salt}
+		\ingredient{feta or cotija cheese}[2][oz][finely crumbled]
+		\ingredient{finely sliced scallions}[½][\cu]
+		\ingredient{cilantro}[½][\cu][finely chopped]
+		\ingredient{jalapeño pepper}[1][][finely chopped]
+		\ingredient{mayonnaise}[1][\tbl]
+		\ingredient{fresh lime juice}[1][\tbl]
+		\ingredient{chili powder to taste}
+	},
 	instructions ={
 			\instruction{Heat oil in a large nonstick skillet or wok over high heat until shimmering. Add corn kernels, season to taste with salt, toss once or twice, and cook without moving until charred on one side, about 2 minutes. Toss corn, stir, and repeat until charred on second side, about 2 minutes longer. Continue tossing and charring until corn is well charred all over, about 10 minutes total. Transfer to a large bowl.}
 			\instruction{Add cheese, scallions, cilantro, jalapeño, garlic, mayonnaise, lime juice, and chile powder and toss to combine. Taste and adjust seasoning with salt and more chile powder to taste. Serve immediately.}
@@ -185,192 +233,167 @@
 \recipe{%
     image = {../images/recipes/BG_pasta_salad.jpg},
 	title = {Broccoli, Grape, and Pasta Salad},
-	description = {If you're a broccoli salad fan, you'll love the combination of these colorful ingredients. Cook the pasta al dente so it's firm enough to hold its own when tossed with the tangy-sweet salad dressing.},
+	description = {If you're a broccoli salad fan, you'll love the combination of these colorful ingredients. Cook the pasta al dente so it's firm enough to hold its own when tossed with the tangy-sweet salad dressing. From Southern Living.},
+	serves = {6-8},
+	preptime = {25 mins},
+	cookingtime = {3 hours 30 mins},
 	ingredients = {
-	    \ingredient{1 cup chopped pecans}
+	    \ingredient{chopped pecans}[1][\cu]
+		\ingredient{farfalle (bow-tie) pasta}[8][oz]
+		\ingredient{fresh broccoli}[1][lb]
+		\ingredient{mayonnaise}[1][\cu]
+		\ingredient{sugar}[⅓][\cu]
+		\ingredient{diced red onion}[⅓][\cu]
+		\ingredient{red wine vinegar}[⅓][\cu]
+		\ingredient{salt}[1][\tsp]
+		\ingredient{seedless red grapes}[2][\cu][halved]
+		\ingredient{cooked bacon}[8][slices][crumbled]
 	},
 	instructions = {
 	    \instruction{Preheat oven to 350°. Bake pecans in a single layer in a shallow pan 5 to 7 minutes or until lightly toasted and fragrant, stirring halfway through.}
+		\instruction{Prepare pasta according to package directions.}
+		\instruction{Meanwhile, cut broccoli florets from stems, and separate florets into small pieces using tip of a paring knife. Peel away tough outer layer of stems, and finely chop stems.}
+		\instruction{Whisk together mayonnaise and next 4 ingredients in a large bowl; add broccoli, hot cooked pasta, and grapes, and stir to coat. Cover and chill 3 hours. Stir bacon and pecans into salad just before serving.}
 	}
 }
 
 \recipe{%
     image = {../images/recipes/potato_salad.jpg},
 	title = {Roasted Potato Salad with Mustard Dressing},
-	description = {This tangy side dish with sweet onions and honey pairs beautifully with burgers or steak. This salad is best chilled but can stay at room temperature for up to two hours. You can also use sweet-hot mustard in place of the Dijon and honey for a zesty flavor.},
+	description = {This tangy side dish with sweet onions and honey pairs beautifully with burgers or steak. This salad is best chilled but can stay at room temperature for up to two hours. You can also use sweet-hot mustard in place of the Dijon and honey for a zesty flavor. From Cooking Light},
 	serves = {8},
 	ingredients = {
-	    \ingredient{3 pounds small red potatoes, cut into 1-inch pieces}
-		\ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
-	    \ingredient{}
+	    \ingredient{small red potatoes}[3][lb][cut into 1-inch pieces]
+		\ingredient{olive oil}[1][\tbl]
+        \ingredient{freshly ground black pepper}[2][\tsp]
+        \ingredient{kosher salt}[½][\tsp]
+        \ingredient{uncooked bacon}[2][slices][chopped]
+        \ingredient{diced Vidalia or other sweet onion}[2][\cu][(about 2 medium)]
+        \ingredient{garlic cloves}[2][][minced]
+        \ingredient{Dijon mustard}[3][\tbl]
+        \ingredient{reduced-fat mayonnaise}[2][\tbl]
+        \ingredient{honey}[1½][\tbl]
+        \ingredient{sherry vinegar}[1½][\tbl]
+        \ingredient{chopped fresh parsley}[¼][\cu]
+
 	},
 	instructions = {
 	    \instruction{Preheat oven to 400°}
+		\instruction{Combine first 4 ingredients in a large bowl; toss to coat. Arrange potatoes in a single layer on a jelly-roll pan. Bake at 400° for 40 minutes or until potatoes are tender, stirring once. Transfer potatoes to a large bowl.}
+		\instruction{Cook bacon in a large nonstick skillet over medium heat until crisp. Remove bacon from pan, reserving 1 tablespoon drippings in pan; set bacon aside. Add onion to drippings in pan; cook 15 minutes or until golden brown and caramelized, stirring frequently. Add garlic to pan; cook 30 seconds. Add onion mixture and bacon to potatoes; toss gently. Let stand 15 minutes.}
+		\instruction{Combine mustard, mayonnaise, honey, and vinegar in a small bowl; stir with a whisk. Add mustard mixture and parsley to potato mixture; toss gently.}
 	}
 }
 
 \recipe{%
+    image = {../images/recipes/sourdough_stuffing.jpg},
 	title = {Sourdough Stuffing with Pears and Sausage},
-	description = {Sourdough bread gives the stuffing a tangier flavor than French bread, but you can use the latter in a pinch.},
+	description = {Sourdough bread gives the stuffing a tangier flavor than French bread, but you can use the latter in a pinch. From Cooking Light.},
 	serves = {12},
 	ingredients = {
-	    \ingredient{8 cups (½-inch) cubed sourdough bread (about 12 ounces)}
+	    \ingredient{8 \cu (½-inch) cubed sourdough bread (about 12 ounces)}
+        \ingredient{turkey Italian sausage}[1][pound]
+        \ingredient{Cooking spray}
+        \ingredient{chopped onion (about 2 pounds)}[5][\cu]
+        \ingredient{chopped celery}[2][\cu]
+        \ingredient{chopped carrot}[1][\cu]
+        \ingredient{presliced mushrooms}[1][(8-ounce) package]
+        \ingredient{(½-inch) cubed peeled Bartlett pear (about 2 medium)}[2][\cu]
+        \ingredient{chopped fresh basil}[1½][\tbl]
+        \ingredient{chopped fresh tarragon}[2][\tsp]
+        \ingredient{salt}[1][\tsp]
+        \ingredient{fat-free, less-sodium chicken broth}[1½][\cu]
+        \ingredient{freshly ground black pepper}[½][\tsp]
+
 	},
 	instructions = {
 	    \instruction{Preheat oven to 425°}
-	}
-}
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - CAESAR SALAD (Simple Layout, No Image)
-%----------------------------------------------------------------------------------------
-
-\makeimagepage{
-	image={../images/recipes/caesar-salad.jpg},
-	caption = {Caesar Salad},
-}
-
-\recipe{%
-	layout={simple},
-	title = {Caesar Salad},
-	indexes = {Caesar Salad, Salad, Recipes!Appetizers, Recipes!Salads, Romaine lettuce, Parmesan, Anchovies},
-	description = {The classic Caesar salad with crispy romaine lettuce, homemade dressing, and crunchy croutons. A timeless favorite that never goes out of style.},
-	serves = {4},
-	preptime = {20 mins},
-	cookingtime = {10 mins},
-	difficulty = {Intermediate},
-	origin = {Mexico/USA},
-	tags = {Salad, Classic, Italian, Make-Ahead},
-	ingredients = {
-			\ingredientsection{Dressing}
-			\ingredient{2 garlic cloves, minced}
-			\ingredient{2 anchovy fillets, minced}
-			\ingredient{2 tbsp fresh lemon juice}
-			\ingredient{1 tsp Dijon mustard}
-			\ingredient{1 tsp Worcestershire sauce}
-			\ingredient{1 cup mayonnaise}
-			\ingredient{1/2 cup freshly grated Parmesan\note{For the best flavor, use freshly grated Parmesan cheese. The dressing can be made up to 3 days ahead and stored in the refrigerator.}}
-			\ingredient{Salt and black pepper}
-
-			\ingredientsection{Salad}
-			\ingredient{2 large heads romaine lettuce, chopped}
-			\ingredient{1 cup homemade or store-bought croutons}
-			\ingredient{1/2 cup shaved Parmesan cheese}
-			\ingredient{Freshly cracked black pepper}
-		},
-	instructions ={
-			\instruction{In a medium bowl, whisk together garlic, anchovies, lemon juice, Dijon mustard, and Worcestershire sauce.}
-			\instruction{Slowly whisk in mayonnaise until well combined and smooth.}
-			\instruction{Stir in grated Parmesan cheese. Season with salt and pepper to taste. Refrigerate until ready to use.}
-			\instruction{Place chopped romaine lettuce in a large serving bowl.}
-			\instruction{Pour desired amount of dressing over the lettuce and toss well to coat evenly.}
-			\instruction{Add croutons and toss again gently.}
-			\instruction{Top with shaved Parmesan cheese and freshly cracked black pepper. Serve immediately.}
-		}
-}
-
-
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - CAPRESE SALAD (Columns Layout, No Image)
-%----------------------------------------------------------------------------------------
-
-\recipe{%
-image={../images/recipes/caprese-salad.jpg},
-imageposition={bottom},
-imageheight={0.4\paperheight},
-title = {Caprese Salad},
-indexes = {Caprese Salad, Salad, Recipes!Appetizers, Recipes!Salads, Mozzarella, Tomatoes, Basil, Vegetarian recipes, Italian cuisine, No-cook meals, Gluten-free recipes},
-description = {A beautiful and refreshing Italian salad showcasing the colors of the Italian flag. The quality of ingredients is key to this simple yet elegant dish.},
-serves = {4},
-preptime = {10 mins},
-difficulty = {Beginner},
-	origin = {Italy},
-	tags = {Italian, No-Cook, Gluten-Free, Vegetarian},
-	vegetarian = {yes},
-	ingredients = {
-		\ingredient{4 large ripe tomatoes, sliced 1/4 inch thick\note{Use the best quality tomatoes you can find—heirloom or vine-ripened varieties work beautifully.}}
-		\ingredient{16 oz fresh mozzarella cheese, sliced 1/4 inch thick\note{Fresh mozzarella di bufala is traditional and highly recommended for the most authentic flavor.}}
-		\ingredient{1 cup fresh basil leaves}
-		\ingredient{3 tbsp extra virgin olive oil}
-		\ingredient{2 tbsp balsamic vinegar or glaze}
-		\ingredient{Flaky sea salt}
-		\ingredient{Freshly ground black pepper}
-	},
-instructions ={
-		\instruction{Arrange tomato and mozzarella slices on a large serving platter, alternating and slightly overlapping them.}
-		\instruction{Tuck fresh basil leaves between the tomato and mozzarella slices.}
-		\instruction{Drizzle generously with extra virgin olive oil and balsamic vinegar.}
-		\instruction{Sprinkle with flaky sea salt and freshly ground black pepper.}
-		\instruction{Let stand at room temperature for 5-10 minutes before serving to allow the flavors to develop.}
+		\instruction{Arrange bread in a single layer on a baking sheet. Bake at 425° for 9 minutes or until golden. Place in a large bowl.}
+		\instruction{Remove casings from sausage. Heat a large nonstick skillet over medium-high heat. Coat pan with cooking spray. Add sausage, and cook for 8 minutes or until browned, stirring to crumble. Add sausage to bread cubes, tossing to combine. Set aside.}
+		\instruction{Return pan to medium-high heat. Add onion, celery, and carrot; sauté 10 minutes or until onion begins to brown. Stir in mushrooms; cook 4 minutes. Stir in pear, basil, tarragon, and salt; cook 4 minutes or until pear begins to soften, stirring occasionally. Add pear mixture to bread mixture, tossing gently to combine. Stir in broth and pepper.}
+		\instruction{Place bread mixture in a 13 x 9-inch baking dish coated with cooking spray; cover with foil. Bake at 425° for 20 minutes. Uncover; bake stuffing an additional 15 minutes or until top of stuffing is crisp.}
 	}
 }
 
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - SPICY CHICKEN WINGS (Simple Layout with Image)
-%----------------------------------------------------------------------------------------
-
 \recipe{%
-	layout={simple},
-	image={../images/recipes/buffalo-chicken-wings.jpg},
-	imageheight={0.4\paperheight},
-	imageoverlayspace={0.35\paperheight},
-	title = {Buffalo Chicken Wings},
-	indexes = {Buffalo Chicken Wings, Chicken Wings, Recipes!Appetizers, Chicken, Spicy recipes, American cuisine, Baked dishes},
-	description = {Crispy, spicy chicken wings with a tangy buffalo sauce. Perfect for game day or any gathering. These wings are baked for a healthier twist on the classic.},
-	serves = {4-6},
-	preptime = {15 mins},
-	cookingtime = {45 mins},
-	difficulty = {Intermediate},
+    % layout={simple},
+    image={../images/recipes/spanish_rice.jpeg},
+    columnratio={0.35, 0.65},
+	title = {Spanish Rice},
+	indexes = {Spanish Rice, Rice!Spanish Rice, Mexican cuisine, Quick meals},
+	description = {Restaurant-Style Spanish Rice (aka Mexican Rice), that is easy to make and tastes like it came straight from the restaurant, and is the best side dish to any Mexican entree.},
+	serves = {12},
+	preptime = {5 mins},
+	cookingtime = {40 mins},
+	difficulty = {Beginner},
 	origin = {USA},
-	tags = {Spicy, Chicken, Baked, Appetizer, Game-Day},
-	spicy = {yes},
+	% tags = {Dessert, Cookies, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
-			\ingredientsection{Wings}
-			\ingredient{3 lbs chicken wings, separated at joints, tips removed\note{For extra crispy wings, pat them completely dry before seasoning. Serve with celery sticks and blue cheese or ranch dressing.}}
-			\ingredient{1 tbsp baking powder}
-			\ingredient{1 tsp salt}
-			\ingredient{1 tsp garlic powder}
-			\ingredient{1/2 tsp black pepper}
-
-			\ingredientsection{Buffalo Sauce}
-			\ingredient{1/2 cup hot sauce (Frank's RedHot preferred)}
-			\ingredient{1/3 cup unsalted butter, melted}
-			\ingredient{1 tbsp white vinegar}
-			\ingredient{1/4 tsp Worcestershire sauce}
-			\ingredient{1/4 tsp cayenne pepper (optional, for extra heat)}
-		},
-	instructions ={
-			\instruction{Preheat oven to 250°F (120°C). Line a large baking sheet with aluminum foil and place a wire rack on top.}
-			\instruction{Pat the chicken wings completely dry with paper towels. This is crucial for crispy skin.}
-			\instruction{In a large bowl, combine baking powder, salt, garlic powder, and black pepper. Add wings and toss until evenly coated.}
-			\instruction{Arrange wings on the wire rack in a single layer, making sure they don't touch.\note{Proper spacing ensures even cooking and maximum crispiness.}}
-			\instruction{Bake at 250°F for 30 minutes. Increase temperature to 425°F (220°C) and bake for an additional 40-45 minutes, flipping halfway through, until golden brown and crispy.}
-			\instruction{While wings are baking, prepare the buffalo sauce by whisking together hot sauce, melted butter, vinegar, Worcestershire sauce, and cayenne pepper in a small bowl.}
-			\instruction{Transfer cooked wings to a large bowl, pour buffalo sauce over them, and toss to coat evenly. Serve immediately.}
-		}
+	    \ingredient{long grain rice}[2][\cu]
+	    \ingredient{oil}[2][\tbl]
+	    \ingredient{tomato sauce}[2][oz]
+	    \ingredient{cilantro}[6][stems]
+	    \ingredient{salt}[1][\tsp]
+	    \ingredient{minced garlic}[1][\tsp]
+	    \ingredient{water}[4][\cu]
+	    \ingredient{chicken flavored bouillon}[1][cube]
+	    \ingredient{cumin}[][dash]
+	    \ingredient{garlic pepper}[][dash]
+	},
+	instructions = {
+	    \instruction{Heat oil in large frying pan on medium heat.}
+	    \instruction{Add rice and cook until golden brown.}
+	    \instruction{Add 1 chicken flavored bouillon cube to 4 cups water and microwave for 3 minutes.}
+	    \instruction{When rice is brown, add water, tomato sauce, salt, garlic, cumin and garlic pepper to pan.}
+	    \instruction{Stir and cover pan. Let simmer for 30-40 minutes or until all is cooked and there is no liquid left. Fluff before serving and ENJOY.}
+	}
 }
 
-
-%----------------------------------------------------------------------------------------------------------
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/rice_pilaf.jpg},
+    columnratio={0.35, 0.65},
+	title = {Rice Pilaf},
+	indexes = {Rice Pilaf, Rice!Rice Pilaf},
+	description = {From Alton Brown},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {30 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Dessert, Cookies, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	% extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+        \ingredient{unsalted butter}[1][\tbl]
+        \ingredient{medium onion}[½][][finely chopped]
+        \ingredient{medium red bell pepper}[½][][finely chopped]
+        \ingredient{kosher salt plus 2 pinches}[1½][\tsp]
+        \ingredient{long-grain white rice}[2][\cu]
+        \ingredient{saffron}[1][pinch][steeped in ¼ cup hot but not boiling water]
+        \ingredient{chicken broth}[2½][cups]
+        \ingredient{orange zest}[1][1-by-2-inch strip]
+        \ingredient{bay leaves}[2]
+        \ingredient{peas}[½][\cu][fresh or frozen]
+        \ingredient{golden raisins}[¼][cup]
+        \ingredient{pistachios}[¼][\cu][chopped]
+	},
+	instructions = {
+	    \instruction{Preheat the oven to 350.}
+	    \instruction{Melt the butter in a 3-quart saucier over medium heat.}
+	    \instruction{Stir in the onion, bell pepper and 2 pinches of salt.}
+	    \instruction{Decrease the heat to low and sweat until the onion is translucent and aromatic but not browned, 3 to 4 minutes. Increase the heat to medium and add the rice. Cook, stirring frequently, until you smell nuts, another 3 to 4 minutes.}
+	    \instruction{Add the saffron and its water, the broth, orange zest, bay leaves and the remaining 1 ½ teaspoons salt. Increase the heat and bring to a boil.}
+	    \instruction{OK, now the weird part: Thoroughly wet a clean towel, kill the heat, scatter the peas on top of the rice, then place the towel across the top of the saucier. Top with the lid, then fold the towel corners up over the lid.}
+	    \instruction{Transfer the saucier (towel and all) to the oven and bake 15 minutes.}
+	    \instruction{Remove and rest at room temperature for 15 more minutes without opening the lid.}
+	    \instruction{Fish out the orange zest and bay leaves. Turn the pilaf out onto a platter, fluff with a large fork and garnish with the raisins and pistachios. Serve family-style, right in the middle of the table.}
+	}
+}
 
 %----------------------------------------------------------------------------------------
 %	ENTREES CHAPTER PAGE
@@ -390,35 +413,35 @@ instructions ={
 
 \recipe{%
 	title = {Beef and Chicken Fajitas with Peppers and Onions},
-	indexes = {Spaghetti Bolognese, Bolognese, Recipes!Entrees, Recipes!Pasta, Pasta, Beef, Tomatoes, Italian cuisine, Make-ahead meals},
-	description = {Bolognese sauce, known in Italian as ragú alla Bolognese, is a meat-based sauce originating from Bologna, Italy. In Italian cuisine, it is customarily used to dress ``tagliatelle al ragú" and to prepare ``lasagne alla bolognese".},
+	indexes = {Chicken!Beef and Chicken Fajitas with Peppers and Onions, Beef!Beef and Chicken Fajitas with Peppers and Onions, Tex-Mex!Beef and Chicken Fajitas with Peppers and Onions, Grilled!Beef and Chicken Fajitas with Peppers and Onions},
+	description = {From Cooking Light Magazine.},
 	serves = {4},
-	preptime = {25 mins},
-	cookingtime = {40 mins},
+	preptime = {30 mins},
+	cookingtime = {20 mins},
 	difficulty = {Beginner},
-	origin = {Italy},
-	tags = {Pasta, Meat, Italian, Bolognese, Make-Ahead},
+	origin = {Tex-Mex},
+	tags = {Chicken, Beef, Grilled, Tex-Mex, Maranade},
 	ingredients = {
 			\ingredientsection{Marinade}
-			\ingredient{1⁄4 cup olive oil}
-			\ingredient{1 teaspoon lime rind,\\ grated}
-			\ingredient{2 1⁄2 tablespoons lime juice}
-			\ingredient{2 tablespoons Worcestershire sauce}
-			\ingredient{1 1⁄2 teaspoons ground cumin}
-			\ingredient{1 teaspoon salt}
-			\ingredient{1⁄2 teaspoon dried oregano}
-			\ingredient{1⁄2 teaspoon fresh coarse ground black pepper}
-			\ingredient{3 garlic cloves,\\ minced}
-			\ingredient{1 (14 1/4 ounce) can low sodium beef broth}
+			\ingredient{olive oil}[¼][\cu]
+			\ingredient{lime rind}[1][\tsp][grated]
+			\ingredient{lime juice}[2½][\tbl]
+			\ingredient{Worcestershire sauce}[2][\tbl]
+			\ingredient{ground cumin}[1½][\tsp]
+			\ingredient{salt}[1][\tsp]
+			\ingredient{dried oregano}[½][\tsp]
+			\ingredient{fresh coarse ground black pepper}[½][\tsp]
+			\ingredient{garlic}[3][cloves][minced]
+			\ingredient{low sodium beef broth}[1][(14¼ ounce) can]
 
 			\ingredientsection{Fajitas}
-			\ingredient{1 (1 pound) flank steak}
-			\ingredient{1 pound skinned, boned chicken breast}
-			\ingredient{2 red bell peppers,\\ each cut into 12 wedges}
-			\ingredient{2 green bell peppers,\\ cut into 16 wedges}
-			\ingredient{1 large  Vidalia onion,\\ each cut into 12 wedges}
+			\ingredient{flank steak}[1][(1-pound)]
+			\ingredient{skinned, boned chicken breast}[1][pound]
+			\ingredient{red bell peppers}[2][][each cut into 12 wedges]
+			\ingredient{green bell peppers}[2][][each cut into 12 wedges]
+			\ingredient{large Vidalia onion}[1][][cut into 16 wedges]
 			\ingredient{cooking spray}
-			\ingredient{16 (6 inch) flour tortillas}
+			\ingredient{(6-inch) flour tortillas}[16]
 			\ingredient{salsa}
 			\ingredient{sour cream}
 			\ingredient{cilantro}
@@ -429,122 +452,365 @@ instructions ={
 			\instructionsection{Preparing the Marinade}
 			\instruction{Combine first 10 ingredients in a large bowl; set aside.}
 			\instructionsection{Fajitas}
-			\instruction{To prepare fajitas, trim fat from steak. Score a diamond pattern on both sides of the steak. Combine 1 1/2 cups marinade, steak, and chicken in a large zip-top plastic bag. Seal and marinate in refrigerator 4 hours or overnight, turning occasionally. Combine remaining marinade, bell peppers, and onion in a zip-top plastic bag. Seal and marinate in refrigerator for 4 hours or overnight, turning occasionally.}
+			\instruction{To prepare fajitas, trim fat from steak. Score a diamond pattern on both sides of the steak. Combine 1½ cups marinade, steak, and chicken in a large zip-top plastic bag. Seal and marinate in refrigerator 4 hours or overnight, turning occasionally. Combine remaining marinade, bell peppers, and onion in a zip-top plastic bag. Seal and marinate in refrigerator for 4 hours or overnight, turning occasionally.}
 			\instruction{Prepare grill.}
 			\instruction{Remove steak and chicken from bag; discard marinade. Remove vegetables from bag; reserve marinade. Place reserved marinade in a small saucepan; set aside. Place steak, chicken, and vegetables on grill rack coated with cooking spray; cook 8 minutes on each side or until desired degree of doneness.}
 			\instruction{Wrap tortillas tightly in foil; place tortilla packet on grill rack the last 2 minutes of grilling time. Bring reserved marinade to a boil. Cut steak and chicken diagonally across the grain into thin slices. Place the steak, chicken, and vegetables on a serving platter; drizzle with reserved marinade.}
-			\instruction{Arrange about 1 ounce steak, about 1 ounce chicken, 3 bell pepper wedges, and 1 onion wedge in a tortilla; top with 1 tablespoon salsa, about 1 teaspoon sour cream, and 1/2 tablespoon cilantro.
+			\instruction{Arrange about 1 ounce steak, about 1 ounce chicken, 3 bell pepper wedges, and 1 onion wedge in a tortilla; top with 1 tablespoon salsa, about 1 teaspoon sour cream, and ½ tablespoon cilantro.
 Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. Serve immediately.}
 		}
 }
 
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - GRILLED SALMON (Columns Layout with Custom Column Ratio)
-%----------------------------------------------------------------------------------------
+\recipe{%
+    % layout={simple},
+    % image={../images/recipes/foo.jpg},
+    columnratio={0.35, 0.65},
+	title = {Apple Cider-Brined Turkey with Savory Herb Gravy},
+	indexes = {Pizza, Eggs, Recipes!Breakfast},
+	description = {Recipe Description here.},
+	serves = {12},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+	tags = {Breakfast, Pizza, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	% extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredientsection{Brine}
+	    \ingredient{apple cider}[8][\cu]
+		\ingredient{kosher salt}[⅔][\cu]
+		\ingredient{sugar}[⅔][\cu]
+		\ingredient{black peppercorns}[1][\tbl][coarsely crushed]
+		\ingredient{whole allspice}[1][\tbl][coarsely crushed]
+		\ingredient{peeled fresh ginger}[8][⅛-inch-thick slices]
+		\ingredient{whole cloves}[6]
+		\ingredient{bay leaves}[2]
+		\ingredient{fresh or frozen turkey}[1][12-pound][thawed]
+		\ingredient{oranges}[2][][quartered]
+		\ingredient{ice}[6][\cu]
+		
+		\ingredientsection{Broth}
+        \ingredient{garlic cloves}[4]
+        \ingredient{sage leaves}[4]
+        \ingredient{thyme sprigs}[4]
+        \ingredient{parsley sprigs}[4]
+        \ingredient{onion}[1][][quartered]
+        \ingredient{fat-free, less-sodium chicken broth}[1][(14-ounce) can]
+        \ingredient{unsalted butter}[2][\tbl][melted and divided]
+        \ingredient{freshly ground black pepper}[1][\tsp]
+        \ingredient{salt}[½][\tsp][divided]
+	},
+	instructions = {
+	    \instruction{To prepare brine, combine first 8 ingredients in a large saucepan; bring to a boil. Cook 5 minutes or until sugar and salt dissolve. Cool completely.}
+		\instruction{Remove giblets and neck from turkey; reserve for Savory Herb Gravy. Rinse turkey with cold water; pat dry. Trim excess fat. Stuff body cavity with orange quarters. Place a turkey-sized oven bag inside a second bag to form a double thickness. Place bags in a large stockpot. Place turkey inside inner bag. Add cider mixture and ice. Secure bags with several twist ties. Refrigerate for 12 to 24 hours, turning occasionally.}
+		\instruction{Remove turkey from bags, and discard brine, orange quarters, and bags. Rinse turkey with cold water; pat dry. Lift wing tips up and over back; tuck under turkey. Tie legs together with kitchen string. Place garlic, sage, thyme, parsley, onion, and broth in the bottom of roasting pan. Place roasting rack in pan. Arrange turkey, breast side down, on roasting rack. Brush turkey back with 1 tablespoon butter; sprinkle with 1/2 teaspoon pepper and 1/4 teaspoon salt. Bake at 450 degrees for 30 minutes.}
+		\instruction{Reduce oven temperature to 350°}
+		\instruction{Remove turkey from oven. Carefully turn turkey over (breast side up) using tongs. Brush turkey breast with 1 tablespoon butter; sprinkle with 1/2 teaspoon pepper and 1/4 teaspoon salt. Bake at 350º for 1 hour and 15 minutes or until a thermometer inserted into meaty part of thigh registers 170º (make sure not to touch bone). (Shield the turkey with foil if it browns too quickly.) Remove turkey from oven; let stand 20 minutes. Reserve pan drippings for Savory Herb Gravy. Discard skin before serving; serve with gravy.}
+	}
+}
 
 \recipe{%
-	image={../images/recipes/grilled-salmon.jpg},
-	columnratio={0.35, 0.65},
-	title = {Lemon Herb Grilled Salmon},
-	indexes = {Lemon Herb Grilled Salmon, Grilled Salmon, Recipes!Entrees, Recipes!Seafood, Salmon, Fish, Lemon, Herbs, Grilled dishes, Healthy recipes, Gluten-free recipes},
-	description = {Perfectly grilled salmon with a bright lemon herb marinade. This recipe demonstrates a custom column ratio for the ingredients and instructions layout.},
+    columnratio={0.35, 0.65},
+	title = {Savory Herb Gravy},
+    ingredients = {
+		\ingredient{vegetable oil}[2][\tsp]
+        \ingredient{turkey neck and giblets}
+        \ingredient{water}[12][\cu]
+        \ingredient{black peppercorns}[6]
+        \ingredient{parsley sprigs}[4]
+        \ingredient{thyme sprigs}[2]
+        \ingredient{yellow onion}[1][][unpeeled and quartered]
+        \ingredient{carrot}[1][][cut into 2-inch pieces]
+        \ingredient{celery stalk}[1][][cut into 2-inch pieces]
+        \ingredient{bay leaf}[1]
+		\ingredient{reserved turkey drippings}
+        \ingredient{all-purpose flour}[3][\tbl]
+        \ingredient{salt}[½][\tsp]
+        \ingredient{freshly ground black pepper}[¼][\tsp]
+	},
+	instructions = {
+	    \instruction{Heat oil in large saucepan over medium-high heat. Add turkey neck and giblets; cook 5 minutes, browning on all sides. Add water and next 7 ingredients (through bay leaf); bring to a boil. Reduce heat, and simmer until liquid is reduced to about 2 1/2 cups (about 1 hour). Strain through a colander over a bowl, reserving cooking liquid and turkey neck. Discard remaining solids. Chill cooking liquid completely. Skim fat from surface, and discard. Remove meat from neck; finely chop meat. Discard neck bone. Add neck meat to cooking liquid.}
+		\instruction{Strain the reserved turkey drippings through a colander over a shallow bowl; discard solids. Place strained drippings in freezer for 20 minutes. Skim fat from surface; discard.}
+		\instruction{Place flour in a medium saucepan; add 1/4 cup cooking liquid, stirring with a whisk until smooth. Add remaining cooking liquid, turkey drippings, salt, and pepper; bring to a boil, stirring frequently. Reduce heat; simmer 5 minutes or until slightly thickened.}
+	}
+}
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/herbed_chicken_parmesan.jpg},
+    columnratio={0.35, 0.65},
+	title = {Herbed Chicken Parmesan},
+	indexes = {Herbed Chicken Parmesan, Italian Cuisine, Chicken, Recipes!Entree},
+	description = {This lightened version of an Italian favorite loses some of the fat but none of the flavor. Cooking Light.},
 	serves = {4},
 	preptime = {15 mins},
-	cookingtime = {12 mins},
-	difficulty = {Intermediate},
-	origin = {Contemporary},
-	tags = {Seafood, Grilled, Healthy, Gluten-Free},
+	cookingtime = {20 mins},
+	difficulty = {Beginner},
+	origin = {Italy},
+	tags = {Italian, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
-			\ingredientsection{Marinade}
-			\ingredient{1/4 cup olive oil}
-			\ingredient{3 tbsp fresh lemon juice}
-			\ingredient{2 cloves garlic, minced}
-			\ingredient{1 tbsp fresh dill, chopped}
-			\ingredient{1 tbsp fresh parsley, chopped}
-			\ingredient{1 tsp lemon zest}
-			\ingredient{Salt and pepper}
-
-			\ingredientsection{Salmon}
-			\ingredient{4 salmon fillets (6 oz each)\note{For best results, use fillets of uniform thickness so they cook evenly.}}
-			\ingredient{Lemon wedges for serving}
-			\ingredient{Fresh herbs for garnish}
-		},
-	instructions ={
-			\instruction{In a small bowl, whisk together olive oil, lemon juice, garlic, dill, parsley, lemon zest, salt, and pepper.}
-			\instruction{Place salmon fillets in a shallow dish and pour marinade over them. Turn to coat. Cover and refrigerate for 15-30 minutes.}
-			\instruction{Preheat grill to medium-high heat (about 375-400°F). Clean and oil the grill grates.}
-			\instruction{Remove salmon from marinade and pat dry with paper towels. Discard excess marinade.}
-			\instruction{Place salmon skin-side down on the grill. Close the lid and cook for 6-8 minutes without moving.\note{Don't flip the salmon too early—wait until it naturally releases from the grill grates.}}
-			\instruction{Carefully flip the salmon using a wide spatula. Cook for another 3-4 minutes until the fish is opaque and flakes easily.\note{The fish should be opaque and flake easily when done.}}
-			\instruction{Remove from grill and let rest for 2 minutes. Serve with lemon wedges and garnish with fresh herbs.}
-		}
+	    \ingredient{grated fresh Parmesan cheese}[⅓][\cu (1½ ounces)][divided]
+	    \ingredient{dry breadcrumbs}[¼][\cu]
+	    \ingredient{minced fresh parsley}[1][\tbl]
+	    \ingredient{dried basil}[½][\tsp]
+	    \ingredient{salt}[¼][\tsp][divided]
+	    \ingredient{egg white}[1][large][lightly beaten]
+	    \ingredient{chicken breast tenders}[1][pound]
+	    \ingredient{butter}[1][\tbl]
+	    \ingredient{bottled fat-free tomato-basil pasta sauce}[1½][\cu]
+	    \ingredient{balsamic vinegar}[2][\tsp]
+	    \ingredient{black pepper}[¼][\tsp]
+	    \ingredient{shredded provolone cheese}[⅓][\cu (1½ ounces)]
+		\ingredient{orzo}
+		\ingredient{broccoli}
+		\ingredient{lemon zest}
+		\ingredient{garlic}
+	},
+	instructions = {
+	    \instruction{Preheat broiler.}
+	    \instruction{Combine 2 tablespoons of Parmesan, breadcrumbs, parsley, basil, and 1/8 teaspoon salt in a shallow dish. Place egg white in a shallow dish. Dip each chicken tender in egg white; dredge in the breadcrumb mixture. Melt butter in a large nonstick skillet over medium-high heat. Add chicken; cook 3 minutes on each side or until done. Set aside.}
+	    \instruction{Combine 1/8 teaspoon salt, pasta sauce, vinegar, and pepper in a microwave-safe bowl. Cover with plastic wrap; vent. Microwave sauce mixture at HIGH 2 minutes or until thoroughly heated. Pour the sauce over chicken in pan. Sprinkle evenly with the remaining Parmesan and provolone cheese. Wrap handle of pan with foil, and broil 2 minutes or until the cheese melts.}
+	}
 }
-
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - VEGETARIAN CURRY (Simple Layout, Vegetarian)
-%----------------------------------------------------------------------------------------
 
 \recipe{%
-	layout={simple},
-	imageheight={0.25\paperheight},
-	imageoverlayspace={0.2\paperheight},
-	title = {Thai Red Curry with Vegetables},
-	indexes = {Thai Red Curry with Vegetables, Thai Red Curry, Curry, Recipes!Entrees, Recipes!Vegetarian, Vegetables, Coconut milk, Thai cuisine, Spicy recipes, Vegan recipes},
-	description = {A vibrant and aromatic vegetarian curry packed with colorful vegetables and creamy coconut milk. Customize with your favorite vegetables.},
-	serves = {6},
+    layout={simple},
+    image={../images/recipes/pulled_chicken.jpg},
+    columnratio={0.25, 0.75},
+	title = {Pulled Chicken Sandwiches},
+	indexes = {Sandwich, Chicken, Recipes!Breakfast},
+	description = {Dinner guests are guaranteed to be impressed with this deceptively easy Pulled Chicken Sandwich recipe, which includes a seven-ingredient rub and a simple 15-minute sauce that comes together while the chicken grills. Serve on buns, over fresh greens, or on top of a baked potato for a filling dinner. Cooking Light},
+	serves = {8},
 	preptime = {20 mins},
-	cookingtime = {25 mins},
-	difficulty = {Intermediate},
-	origin = {Thailand},
-	tags = {Thai, Spicy, Curry, Vegan, Vegetarian},
-	vegetarian = {yes},
-	spicy = {yes},
+	cookingtime = {20 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+	tags = {Sandwich, Chicken},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {The chicken and sauce can be made up to two days ahead and stored in the refrigerator.},
 	ingredients = {
-			\ingredientsection{Curry}
-			\ingredient{2 tbsp coconut oil}
-			\ingredient{3-4 tbsp Thai red curry paste\note{Thai red curry paste varies in heat level between brands. Start with less and add more to taste.}}
-			\ingredient{1 can (14 oz) coconut milk}
-			\ingredient{1 cup vegetable broth}
-			\ingredient{2 tbsp soy sauce or tamari}
-			\ingredient{1 tbsp brown sugar or maple syrup}
-			\ingredient{2 bell peppers, sliced}
-			\ingredient{1 medium eggplant, cubed}
-			\ingredient{1 cup green beans, trimmed}
-			\ingredient{1 cup bamboo shoots}
-			\ingredient{1 cup Thai basil leaves}
-
-			\ingredientsection{Serving}
-			\ingredient{Cooked jasmine rice\note{Serve over jasmine rice or rice noodles for a complete meal.}}
-			\ingredient{Fresh lime wedges}
-			\ingredient{Fresh cilantro}
-			\ingredient{Sliced red chili (optional)}
-		},
-		instructions ={
-			\instruction{Heat coconut oil in a large pot or wok over medium heat. Add curry paste and cook for 1-2 minutes, stirring constantly, until fragrant.}
-			\instruction{Pour in coconut milk and stir well to dissolve the curry paste. Bring to a gentle simmer.}
-			\instruction{Add vegetable broth, soy sauce, and brown sugar. Stir to combine.}
-			\instruction{Add eggplant and cook for 5 minutes, then add bell peppers and green beans. Simmer for 10-12 minutes until vegetables are tender but still crisp.}
-			\instruction{Stir in bamboo shoots and Thai basil. Cook for 2 more minutes.}
-			\instruction{Taste and adjust seasoning with more soy sauce, sugar, or curry paste as needed.}
-			\instruction{Serve hot over jasmine rice, garnished with fresh cilantro, lime wedges, and sliced chili if desired.}
-		}
+	    \begin{minipage}[t]{.32\textwidth}
+	    \ingredientsection{Chicken}
+	    \ingredient{dark brown sugar}[2][\tbl]
+	    \ingredient{paprika}[1][\tsp]
+	    \ingredient{ground cumin}[¾][\tsp]
+	    \ingredient{ground chipotle chile pepper}[½][\tsp]
+	    \ingredient{ground ginger}[¼][\tsp]
+	    \ingredient{salt}[⅛][\tsp]
+	    \ingredient{skinless, boneless chicken thighs}[2][pounds]
+	    \ingredient{Cooking spray}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.32\textwidth}
+	    \ingredientsection{Sauce}
+	    \ingredient{canola oil}[2][\tsp]
+	    \ingredient{finely chopped onion}[½][\cu]
+	    \ingredient{dark brown sugar}[1][\tbl]
+	    \ingredient{chili powder}[1][\tsp]
+	    \ingredient{garlic powder}[½][\tsp]
+	    \ingredient{dry mustard}[½][\tsp]
+	    \ingredient{ground allspice}[¼][\tsp]
+	    \ingredient{ground red pepper}[⅛][\tsp]
+	    \ingredient{ketchup}[1][\cu]
+	    \ingredient{cider vinegar}[2][\tbl]
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.32\textwidth}
+	    \ingredientsection{Remaining ingredients}
+	    \ingredient{hamburger buns}[8][][toasted]
+	    \ingredient{hamburger dill chips}[16]
+        \end{minipage}
+	},
+	instructions = {
+	    \instruction{Preheat grill to medium-high heat.}
+	    \instruction{To prepare chicken, combine first 6 ingredients; rub evenly over chicken. Place chicken on a grill rack coated with cooking spray; cover and grill 15 minutes or until a thermometer registers 180°, turning occasionally. Let stand for 5 minutes. Shred with 2 forks.}
+	    \instruction{To prepare sauce, while chicken grills, heat canola oil in a medium saucepan over medium heat. Add onion; cook for 5 minutes or until tender, stirring occasionally. Stir in 1 tablespoon sugar and next 5 ingredients (through ground red pepper); cook 30 seconds. Stir in ketchup and vinegar; bring to a boil. Reduce heat, and simmer 10 minutes or until slightly thickened, stirring occasionally. Stir in chicken; cook 2 minutes.}
+	    \instruction{Place 1/3 cup chicken mixture on bottom half of each bun; top each with 2 pickle chips and top of bun.}
+	}
 }
 
-
-\makeimagepage{
-	image={../images/recipes/thai-red-curry.jpg},
-	caption = {Thai Red Curry with Vegetables},
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/beef_daube_provencal.jpg},
+    columnratio={0.35, 0.65},
+	title = {Beef Daube Procençal},
+	indexes = {Beef, Stew, Recipes!Entree, French Cuisine},
+	description = {Best Beef Recipe. This classic French braised beef, red wine, and vegetable stew is simple and delicious. It stands above all of our other beef recipes because it offers the homey comfort and convenience of pot roast yet is versatile and sophisticated enough for entertaining. Garnish with chopped fresh thyme.},
+	serves = {12},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Slow-Cooker},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {To make in a slow cooker, prepare through Step Place beef mixture in an electric slow cooker. Cover and cook on HIGH for 5 hours.},
+	ingredients = {
+	    \ingredient{olive oil}[2][\tsp]
+	    \ingredient{garlic}[12][cloves][crushed]
+	    \ingredient{(2-pound) boneless chuck roast}[1][][trimmed and cut into 2-inch cubes]
+	    \ingredient{salt}[1½][\tsp][divided]
+		\ingredient{freshly ground black pepper}[½][\tsp][divided]
+	    \ingredient{red wine}[1][\cu]
+	    \ingredient{chopped carrot}[2][\cu]
+	    \ingredient{chopped onion}[1½][\cu]
+	    \ingredient{less-sodium beef broth}[½][\cu]
+	    \ingredient{tomato paste}[1][\tbl]
+	    \ingredient{chopped fresh rosemary}[1][\tsp]
+	    \ingredient{chopped fresh thyme}[1][\tsp]
+	    \ingredient{ground cloves}[1][dash]
+	    \ingredient{diced tomatoes}[1][(14.5-ounce) can][undrained]
+	    \ingredient{bay leaf}[1]
+	    \ingredient{hot cooked medium egg noodles}[3][\cu][(about 4 cups uncooked noodles)]
+	    \ingredient{chopped fresh thyme}[][][(optional)]
+	},
+	instructions = {
+	    \instruction{Preheat oven to 300°.}
+		\instruction{Heat olive oil in a small Dutch oven over low heat. Add garlic to pan; cook for 5 minutes or until garlic is fragrant, stirring occasionally. Remove garlic with a slotted spoon; set aside. Increase heat to medium-high. Add beef to pan. Sprinkle beef with ½ teaspoon salt and ¼ teaspoon black pepper. Cook 5 minutes, browning on all sides. Remove beef from pan. Add wine to pan, and bring to a boil, scraping pan to loosen browned bits. Add garlic, beef, remaining 1 teaspoon salt, remaining ¼ teaspoon pepper, carrot, and next 8 ingredients (through bay leaf) to pan; bring to a boil.}
+		\instruction{Cover and bake at 300° for 2 ½ hours or until beef is tender. Discard bay leaf. Serve over noodles. Garnish with chopped fresh thyme, if desired.}
+	}
 }
 
-%----------------------------------------------------------------------------------------------------------
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/beef_rendang.jpg},
+    columnratio={0.35, 0.65},
+	title = {Beef Rendang},
+	indexes = {Beef, Stew, Recipes!Entree, Malasian Cuisine},
+	description = {This rich Malay curry features aromatic lemongrass, garlic, ginger, and cinnamon. Make sure the beef mixture cooks at a low simmer so the sauce doesn't scorch and the meat slowly becomes tender. If you can't find unsweetened coconut, use sweetened flaked coconut and omit the added sugar.},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Breakfast, Pizza, Quick, Baked},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredient{chopped shallots}[½][\cu]
+        \ingredient{thinly sliced peeled ginger}[⅓][\cu]
+        \ingredient{minced garlic}[1½][\tbl][(about 5 cloves)]
+        \ingredient{chili garlic sauce}[2][\tbl]
+        \ingredient{ground turmeric}[1½][\tsp]
+        \ingredient{salt}[1¼][\tsp]
+        \ingredient{ground cinnamon}[¼][\tsp]
+        \ingredient{whole cloves}[6]
+		\ingredient{serrano chiles}[1 to 2][][chopped]
+        \ingredient{light coconut milk}[1][(14-ounce) can][divided]
+        \ingredient{flaked unsweetened coconut}[⅔][\cu][toasted]
+        \ingredient{grated lime rind}[1][\tsp]
+        \ingredient{fresh lime juice}[2][\tbl]
+        \ingredient{sugar}[2][\tsp]
+        \ingredient{fresh lemongrass stalks}[2][(3-inch) pieces][crushed] 
+        \ingredient{boneless chuck roast}[2][pounds][trimmed and cut into 1-inch cubes]
+        \ingredient{fat-free, less-sodium chicken broth}[1][(14-ounce) can]
+        \ingredient{hot cooked basmati rice}[4][\cu]
+
+	},
+	instructions = {
+	    \instruction{Place first 9 ingredients in a food processor or mini chopper. Add ¼ cup coconut milk; process until smooth. Spoon mixture into a bowl; set aside.}
+		\instruction{Place 3 tablespoons coconut milk and flaked coconut in food processor; process until a smooth paste forms.}
+		\instruction{Heat a large saucepan over medium-high heat. Add shallot mixture; cook 1 minute or until fragrant, stirring constantly. Stir in remaining coconut milk, rind, and next 5 ingredients (through broth); bring to a boil. Cover, reduce heat to medium-low, and simmer 90 minutes or until beef is tender, stirring occasionally. Discard lemongrass. Stir in flaked coconut mixture; simmer 10 minutes or until liquid almost evaporates. Serve over rice.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/meat_sauce.jpeg},
+    columnratio={0.35, 0.65},
+	title = {Slow Simmered Meat Sauce},
+	indexes = {Pasta, Sauce, Recipes!Entree, Italian Cuisine},
+	description = {Mafaldine is a flat noodle with ruffled edges. You can substitute spaghetti. From Cooking Light.},
+	serves = {8},
+	preptime = {30 mins},
+	cookingtime = {8 hr},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Sauce, Pasta, Slow-Cooker},
+	spicy = {yes},
+	% extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredient{olive oil}[1][\tbl]
+	    \ingredient{chopped onion}[2][\cu]
+	    \ingredient{chopped carrot}[1][\cu]
+	    \ingredient{garlic}[6][cloves][minced]
+	    \ingredient{hot Italian sausage}[8][oz]
+	    \ingredient{ground sirloin}[1][lb]
+	    \ingredient{kalamata olives}[½][\cu][pitted and sliced]
+	    \ingredient{no-salt-added tomato paste}[¼][\cu]
+	    \ingredient{sugar}[1½][\tsp]
+	    \ingredient{kosher salt}[1][\tsp]
+	    \ingredient{crushed red pepper}[½][\tsp]
+	    \ingredient{no-salt-added crushed tomatoes, undrained}[1][(28-ounce) can]
+	    \ingredient{no-salt-added tomato sauce}[1][\cu]
+	    \ingredient{chopped fresh oregano}[1][\tbl]
+	    \ingredient{uncooked mafaldine pasta}[16][ounces]
+	    \ingredient{torn fresh basil}[½][\cu]
+	    \ingredient{shaved fresh Parmigiano-Reggiano cheese}[3][ounces]
+	},
+	instructions = {
+	    \instruction{Heat a large skillet over medium-high heat. Add oil to pan; swirl to coat. Add onion and carrot to pan; sauté 4 minutes, stirring occasionally. Add garlic; sauté 1 minute, stirring constantly. Place vegetable mixture in a 6-quart slow cooker. Add sausage and beef to skillet; sauté 6 minutes or until browned, stirring to crumble. Remove beef mixture from skillet using a slotted spoon. Place beef mixture on a double layer of paper towels; drain. Add beef mixture to slow cooker. Stir olives and next 6 ingredients (through tomato sauce) into slow cooker. Cover and cook on LOW 8 hours. Stir in oregano.}
+		\instruction{Prepare pasta according to package directions, omitting salt and fat. Serve sauce with hot cooked pasta; top with basil and cheese.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
+    % image={../images/recipes/foo.png},
+    columnratio={0.35, 0.65},
+	title = {Gnocchi Bolognese},
+	indexes = {Beef, Stew, Recipes!Entree, Italian Cuisine},
+	description = {These feather-light Italian dumplings can be made from spinach, ricotta, polenta, or semolina flour, but are most commonly made from potatoes. Their thin grooves are perfect for catching the Bolognese sauce.},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+	tags = {Bolognese, Pasta!Gnocchi},
+	% vegetarian = {yes},
+	% spicy = {yes},
+	extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredientsection{Sauce}
+	    \ingredient{vegetable oil}[1][\tsp]
+	    \ingredient{beef stew meat}[½][lb][trimmed and cut into 2-inch pieces]
+	    \ingredient{pork stew meat}[½][lb][trimmed and cut into 2-inch pieces]
+	    \ingredient{chopped onion}[1½][\cu]
+	    \ingredient{chopped celery}[½][\cu]
+	    \ingredient{chopped carrot}[½][\cu]
+	    \ingredient{dried chopped porcini mushrooms}[⅓][\cu][(about ⅜ oz)]
+	    \ingredient{garlic}[2][cloves][minced]
+	    \ingredient{2\% reduced-fat milk}[1½][\cu]
+	    \ingredient{salt}[¾][\tsp]
+	    \ingredient{diced tomatoes}[1][(28-oz) can][undrained]
+	    \ingredient{bay leaf}[1]
+	    \ingredient{finely chopped fresh flat-leaf parsley}[½][\cu]
+	    \ingredient{chopped fresh or 1 \tsp dried thyme}[1][\tbl]
+
+        \ingredientsection{Gnocchi}
+	    \ingredient{large baking potatoes}[2½][lb]
+	    \ingredient{all-purpose flour}[1¼][cups][divided]
+	    \ingredient{salt}[¼][tsp]
+	    \ingredient{egg yolks}[2][large]
+		\ingredient{fresh parmesan cheese}[6][\tbl][(1½ oz)]
+	},
+	instructions = {
+	    \instruction{To prepare sauce, heat 1 teaspoon oil in a large Dutch oven over medium-high heat. Add beef and pork; cook 3 minutes, browning on all sides. Remove meat from pan, and cool slightly. Finely chop meat.}
+		\instruction{Heat pan over medium heat. Add onion, celery, carrot, porcini, and garlic cloves; cook 10 minutes, stirring occa-sionally. Add chopped meat, milk, teaspoon salt, tomatoes, and bay leaf; bring to a boil. Cover, reduce heat, and simmer 1 hour. Uncover and cook 45 minutes, stirring occasionally. Stir in parsley and thyme; cook 15 minutes or until slightly thick, stirring occasionally. Discard bay leaf.}
+		\instruction{To prepare the gnocchi, preheat oven to 400°.}
+		\instruction{Bake potatoes at 400° for 1½ hours or until done; cool slightly. Cut each potato in half lengthwise; scoop out pulp. Discard skins. Mash pulp. Place 4 cups mashed potatoes in a large bowl, reserving remaining mashed potatoes for another use. Lightly spoon flour into dry measuring cups; level with a knife. Add 1 cup flour, ¼ teaspoon salt, and egg yolks to 4 cups mashed pota-toes, and stir to combine. Knead until smooth (about 2 minutes); add enough of remaining flour, 1 tablespoon at a time, to prevent dough from sticking to hands (dough will feel tacky.}
+		\instruction{Divide dough into 6 portions. Shape each portion into a 10-inch-long rope. Cut each rope into 10(1-inch) pieces; roll each piece into a ball. Working with one dough piece at a time (cover remaining dough to prevent drying, using your thumb or index finger, roll dough piece down the tines of a lightly floured fork (gnocchi will have ridges on one side and an indention on the other). Place gnocchi on a lightly
+floured baking sheet.}
+		\instruction{Bring 1 gallon water to a boil in a large stockpot. Add half of gnocchi; cook 3 minutes or until done (gnocchi will rise to the surface). Remove cooked gnocchi with a slotted spoon; place in a colander. Repeat procedure with remaining uncooked gnocchi. Serve immediately with sauce.
+Sprinkle with cheese.}
+	}
+}
 
 
 %----------------------------------------------------------------------------------------
@@ -556,187 +822,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	image={../images/book/dessert.jpg},
 	layout={right}
 }
-
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - CHOCOLATE CAKE (Columns Layout)
-%----------------------------------------------------------------------------------------
-
-\recipe{%
-	image={../images/recipes/chocolate-cake.jpg},
-	imageheight={0.5\paperheight},
-	imageoverlayspace={0.45\paperheight},
-	title = {Decadent Chocolate Cake},
-	indexes = {Decadent Chocolate Cake, Chocolate Cake, Cake, Recipes!Desserts, Chocolate, Cocoa, Buttercream, American cuisine, Celebration cakes, Baked dishes},
-	description = {A rich, moist chocolate layer cake with smooth chocolate buttercream frosting. This showstopper is perfect for birthdays and special celebrations.},
-	serves = {12},
-	preptime = {30 mins},
-	cookingtime = {35 mins},
-	difficulty = {Advanced},
-	origin = {USA},
-	tags = {Dessert, Chocolate, Cake, Celebration, Make-Ahead},
-	ingredients = {
-			\ingredientsection{Cake}
-			\ingredient{2 cups all-purpose flour}
-			\ingredient{2 cups granulated sugar}
-			\ingredient{3/4 cup unsweetened cocoa powder}
-			\ingredient{2 tsp baking soda}
-			\ingredient{1 tsp baking powder}
-			\ingredient{1 tsp salt}
-			\ingredient{2 large eggs\note{For best results, bring all ingredients to room temperature before starting.}}
-			\ingredient{1 cup buttermilk}
-			\ingredient{1 cup strong black coffee, hot}
-			\ingredient{1/2 cup vegetable oil}
-			\ingredient{2 tsp vanilla extract}
-
-			\ingredientsection{Frosting}
-			\ingredient{1 cup (2 sticks) unsalted butter, softened\note{The cake layers can be made a day ahead, wrapped in plastic wrap, and stored at room temperature.}}
-			\ingredient{3 1/2 cups powdered sugar}
-			\ingredient{1/2 cup unsweetened cocoa powder}
-			\ingredient{1/2 cup heavy cream}
-			\ingredient{2 tsp vanilla extract}
-			\ingredient{1/4 tsp salt}
-		},
-	instructions ={
-			\instructionsection{Prepare the Cake}
-			\instruction{Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.}
-			\instruction{In a large bowl, whisk together flour, sugar, cocoa powder, baking soda, baking powder, and salt.}
-			\instruction{Add eggs, buttermilk, hot coffee, oil, and vanilla extract. Beat with an electric mixer on medium speed for 2 minutes. The batter will be thin.}
-			\instruction{Pour batter evenly into prepared pans. Bake for 30-35 minutes until a toothpick inserted in the center comes out clean.}
-			\instruction{Cool in pans for 10 minutes, then turn out onto wire racks to cool completely.}
-
-			\instructionsection{Make the Frosting}
-			\instruction{Beat butter with an electric mixer until creamy and smooth, about 2 minutes.}
-			\instruction{Sift together powdered sugar and cocoa powder. Gradually add to butter, alternating with heavy cream.}
-			\instruction{Add vanilla extract and salt. Beat on high speed for 3-4 minutes until light and fluffy.}
-
-			\instructionsection{Assemble}
-			\instruction{Place one cake layer on a serving plate. Spread with about 1 cup of frosting.}
-			\instruction{Top with second cake layer. Frost the top and sides of the entire cake with remaining frosting.}
-			\instruction{Refrigerate for at least 30 minutes before slicing. Bring to room temperature before serving.}
-		}
-}
-
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - TIRAMISU (Simple Layout, No Image)
-%----------------------------------------------------------------------------------------
-
-\makeimagepage{
-	image={../images/recipes/tiramisu.jpg},
-	caption = {Classic Tiramisu}
-}
-
-\recipe{%
-	layout={simple},
-	title = {Classic Tiramisu},
-	indexes = {Classic Tiramisu, Tiramisu, Recipes!Desserts, Coffee, Mascarpone, Ladyfingers, Italian cuisine, No-bake desserts, Make-ahead meals},
-	description = {The beloved Italian dessert with layers of coffee-soaked ladyfingers and creamy mascarpone. A make-ahead dessert that gets better as it sits.},
-	serves = {8-10},
-	preptime = {30 mins},
-	difficulty = {Intermediate},
-	origin = {Italy},
-	tags = {Italian, Dessert, Coffee, No-Bake, Make-Ahead},
-	extrainstructioninfo = {Tiramisu must be refrigerated for at least 4 hours, but overnight is best. This allows the flavors to meld and the ladyfingers to soften perfectly. Use high-quality espresso or strong coffee for the best flavor.},
-	ingredients = {
-			\ingredientsection{Cream Layer}
-			\ingredient{6 large egg yolks}
-			\ingredient{3/4 cup granulated sugar}
-			\ingredient{1 1/3 cups mascarpone cheese, room temperature}
-			\ingredient{2 cups heavy cream, cold}
-
-			\ingredientsection{Coffee Layer}
-			\ingredient{2 cups strong espresso or coffee, cooled\note{Use high-quality espresso or strong coffee for the best flavor.}}
-			\ingredient{3 tbsp coffee liqueur (optional)}
-			\ingredient{40-48 ladyfinger cookies (savoiardi)}
-
-			\ingredientsection{Topping}
-			\ingredient{2 tbsp unsweetened cocoa powder}
-			\ingredient{Dark chocolate shavings (optional)}
-		},
-	instructions ={
-			\instruction{Whisk egg yolks and sugar in a heatproof bowl. Place over a pot of simmering water (double boiler method) and whisk constantly for 8-10 minutes until thick and pale. Remove from heat and let cool slightly.}
-			\instruction{Add mascarpone to the egg mixture and whisk until smooth and well combined. Set aside.}
-			\instruction{In a separate bowl, whip heavy cream until stiff peaks form. Gently fold the whipped cream into the mascarpone mixture in three additions.}
-			\instruction{Combine cooled espresso with coffee liqueur (if using) in a shallow dish.}
-			\instruction{Quickly dip each ladyfinger into the coffee mixture (about 2 seconds per side) and arrange in a single layer in a 9x13 inch dish.}
-			\instruction{Spread half of the mascarpone cream over the ladyfingers. Repeat with another layer of dipped ladyfingers and remaining cream.}
-			\instruction{Cover with plastic wrap and refrigerate for at least 4 hours or overnight.\note{Overnight refrigeration is best as it allows the flavors to meld and the ladyfingers to soften perfectly.}}
-			\instruction{Before serving, dust generously with cocoa powder and garnish with chocolate shavings if desired.}
-		}
-}
-
-
-%----------------------------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	RECIPE EXAMPLE - APPLE PIE (Columns Layout with Image, Multiple Sections)
-%----------------------------------------------------------------------------------------
-
-\recipe{%
-	title = {Classic Apple Pie},
-	indexes = {Classic Apple Pie, Apple Pie, Pie, Recipes!Desserts, Apples, Cinnamon, Pastry, American cuisine, Fall recipes, Baked dishes},
-	description = {A traditional American apple pie with flaky, buttery crust and perfectly spiced apple filling. This is comfort food at its finest.},
-	serves = {8},
-	preptime = {45 mins},
-	cookingtime = {55 mins},
-	difficulty = {Advanced},
-	origin = {USA},
-	tags = {Dessert, Pie, American, Fall, Baked, Make-Ahead},
-	ingredients = {
-			\ingredientsection{Pie Crust}
-			\ingredient{2 1/2 cups all-purpose flour}
-			\ingredient{1 tsp salt}
-			\ingredient{1 tbsp granulated sugar}
-			\ingredient{1 cup (2 sticks) cold unsalted butter, cubed\note{For the flakiest crust, make sure all ingredients are cold and handle the dough as little as possible.}}
-			\ingredient{6-8 tbsp ice water}
-
-			\ingredientsection{Apple Filling}
-			\ingredient{6-7 cups sliced apples (Granny Smith and Honeycrisp mix)}
-			\ingredient{2/3 cup granulated sugar}
-			\ingredient{1/4 cup all-purpose flour}
-			\ingredient{1 tsp ground cinnamon}
-			\ingredient{1/4 tsp ground nutmeg}
-			\ingredient{1/4 tsp salt}
-			\ingredient{2 tbsp lemon juice}
-			\ingredient{2 tbsp butter, cut into small pieces}
-
-			\ingredientsection{Topping}
-			\ingredient{1 egg, beaten (for egg wash)}
-			\ingredient{1 tbsp coarse sugar}
-		},
-	instructions ={
-			\instructionsection{Make the Crust}
-			\instruction{Pulse flour, salt, and sugar in a food processor. Add cold butter and pulse until mixture resembles coarse crumbs.}
-			\instruction{Add ice water 1 tablespoon at a time, pulsing after each addition, until dough just comes together.}
-			\instruction{Divide dough in half, shape into disks, wrap in plastic, and refrigerate for at least 1 hour.}
-
-			\instructionsection{Prepare the Filling}
-			\instruction{Preheat oven to 425°F (220°C). In a large bowl, toss sliced apples with sugar, flour, cinnamon, nutmeg, salt, and lemon juice.}
-
-			\instructionsection{Assemble and Bake}
-			\instruction{Roll out one disk of dough on a floured surface to 12 inches diameter. Transfer to a 9-inch pie plate.}
-			\instruction{Pour apple filling into crust and dot with butter pieces. Roll out second disk of dough and place over filling. Trim excess and crimp edges to seal.}
-			\instruction{Cut several slits in top crust for venting. Brush with egg wash and sprinkle with coarse sugar.}
-			\instruction{Place pie on a baking sheet. Bake for 20 minutes, then reduce heat to 375°F (190°C) and bake for 35-40 minutes more until crust is golden and filling is bubbling.}
-			\instruction{Cool on a wire rack for at least 2 hours before slicing. Serve warm or at room temperature with vanilla ice cream.\note{The pie can be made a day ahead and reheated before serving.}}
-		}
-}
-
-
-\makeimagepage{
-	image={../images/recipes/apple-pie.jpg},
-	caption = {Classic Apple Pie}
-}
-
-%----------------------------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
 %	CONVERSION TABLE
