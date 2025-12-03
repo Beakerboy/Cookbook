@@ -18,6 +18,7 @@
 
 \RenewDocumentCommand{\ingredientsection}{m}{%
 	\iffirstingredientsection%
+	    \firstingredientsectionfalse
 		\caption{#1}
 		\begin{tabular}{ r @{\hspace{2em}}l }
 	\else%
