@@ -13,6 +13,11 @@
 % 1/6-⅙
 % 1/8-⅛ 3/8-⅜
 
+\makeatletter
+% \RenewDocumentEnvironment{recipeingredients}{}{%
+% }{%
+% }
+
 \RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
 	\iffirstingredientsection%
 		\firstingredientsectionfalse%
@@ -20,6 +25,10 @@
 	\item
 	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
 }
+
+% \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
+% }
+\makeatother
 
 \begin{document}
 
