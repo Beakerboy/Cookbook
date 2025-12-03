@@ -15,9 +15,23 @@
 
 
 \makeatletter
-% \RenewDocumentEnvironment{recipeingredients}{}{%
-% }{%
-% }
+
+\RenewDocumentCommand{\ingredientsection}{m}{%
+	\iffirstingredientsection%
+		\firstingredientsectionfalse%
+	\else%
+		\vspace{0.01\textheight}%
+	\fi%
+	\caption{#1}\par\vspace{0.005\textheight}%
+} % Format ingredient section headers with spacing
+
+\RenewDocumentEnvironment{recipeingredients}{}{%
+    \vspace*{-0.01\textheight}
+	\firstingredientsectiontrue
+	\begin{tabular}{ r @{\hspace{2em}}l }%
+}{%
+    \end{tabular}%
+}
 
 \RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
 	\iffirstingredientsection%
@@ -27,8 +41,9 @@
 	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
 }
 
-% \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
-% }
+\RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
+    \textit{\small #2} & #3 #1 #4 \\
+}
 \makeatother
 
 \begin{document}
