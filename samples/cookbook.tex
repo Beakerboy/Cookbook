@@ -49,22 +49,20 @@
 % Adds a normal ingredient row
 \RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
     % Trim all values first
-    \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
+    \def\ingredient@name{#1}%
     \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
-	\def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
-    \def\ingredient@note{#4}%
+	\def\ingredient@unit{#3}%
+    \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
 	% Initialize accumulator
 	\def\ingredient@output{}%
-    \ifdefempty{\ingredient@unit}{%
-	    \edef\ingredient@output{EmptyUnit #3}%
-	}{%
-        \edef\ingredient@output{\ingredient@unit}%
+    \ifdefempty{\ingredient@unit}{}{%
+        \edef\ingredient@output{#3}%
 	}%
 
     \ifdefempty{\ingredient@output}{%
-        \edef\ingredient@output{\ingredient@name}%
+        \edef\ingredient@output{#1}%
     }{%
-        \edef\ingredient@output{\ingredient@output\space\ingredient@name}%
+        \edef\ingredient@output{\ingredient@output\ #1}%
     }%
 
     % Output the accumulated main part
