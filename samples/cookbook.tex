@@ -43,8 +43,11 @@
 }
 
 % ========== ingredient ==========
+\NewDocumentCommand{\ingredient}{m O{} O{} O{}}{
+    \ingredient@formatmulti{#1}{#2}{#3}{#4}%
+}
 % Adds a normal ingredient row
-\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{%
+\RenewDocumentCommand{\ingredient@formatmulti}{m m m m}{%
     % Trim all values first
     \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
     \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
