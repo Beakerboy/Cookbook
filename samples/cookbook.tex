@@ -52,7 +52,7 @@
     \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
     \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
 	\def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
-    \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
+    \def\ingredient@note{#4}%
 	% Initialize accumulator
 	\def\ingredient@output{}%
     \ifdefempty{\ingredient@unit}{%
@@ -71,7 +71,7 @@
     \textit{\small \ingredient@qty} & \textit{\small \ingredient@output}%
     % Add note with comma separator if present
     \ifdefempty{\ingredient@note}{}{%
-        , \ingredient@note%
+        , #4%
     } \\%
 }
 
