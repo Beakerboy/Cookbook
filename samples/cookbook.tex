@@ -43,7 +43,7 @@
 }
 
 % ========== ingredient ==========
-\NewDocumentCommand{\ingredient}{m O{} O{} O{}}{
+\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
     \ingredient@formatmulti{#1}{#2}{#3}{#4}%
 }
 % Adds a normal ingredient row
