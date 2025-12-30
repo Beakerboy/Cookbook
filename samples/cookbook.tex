@@ -53,11 +53,7 @@
 	% Initialize accumulator
 	\def\ingredient@output{}%
     \ifdefempty{\ingredient@unit}{}{%
-        \ifdefempty{\ingredient@output}{%
-            \edef\ingredient@output{\ingredient@unit}%
-        }{%
-            \edef\ingredient@output{\ingredient@output\space\ingredient@unit}%
-        }%
+        \edef\ingredient@output{\ingredient@unit}%
 	}%
     \ifdefempty{\ingredient@name}{}{%
         \ifdefempty{\ingredient@output}{%
@@ -67,7 +63,7 @@
         }%
     }%
     % Output the accumulated main part
-    \textit{\small \ingredient@qty} & \ingredient@output%
+    \textit{\small \ingredient@qty} & \textit{\small \ingredient@output}%
     % Add note with comma separator if present
     \ifdefempty{\ingredient@note}{}{%
         , \ingredient@note%
