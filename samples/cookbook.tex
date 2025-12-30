@@ -45,7 +45,33 @@
 % ========== ingredient ==========
 % Adds a normal ingredient row
 \RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{%
-    \textit{\small #2} & #3 #1 #4 \\
+    % Trim all values first
+    \def\ingredient@name{#1}\trim@spaces@in\ingredient@name%
+    \def\ingredient@qty{#2}\trim@spaces@in\ingredient@qty%
+    \def\ingredient@unit{#3}\trim@spaces@in\ingredient@unit%
+    \def\ingredient@note{#4}\trim@spaces@in\ingredient@note%
+	% Initialize accumulator
+	\def\ingredient@output{}%
+    \ifdefempty{\ingredient@unit}{}{%
+        \ifdefempty{\ingredient@output}{%
+            \edef\ingredient@output{\ingredient@unit}%
+        }{%
+            \edef\ingredient@output{\ingredient@output\space\ingredient@unit}%
+        }%
+	}%
+    \ifdefempty{\ingredient@name}{}{%
+        \ifdefempty{\ingredient@output}{%
+            \edef\ingredient@output{\ingredient@name}%
+        }{%
+            \edef\ingredient@output{\ingredient@output\space\ingredient@name}%
+        }%
+    }%
+    % Output the accumulated main part
+    \textit{\small \ingredient@qty} & \ingredient@output%
+    % Add note with comma separator if present
+    \ifdefempty{\ingredient@note}{}{%
+        , \ingredient@note%
+    } \\%
 }
 
 \makeatother
@@ -194,7 +220,7 @@
 	extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Crust}
-	    \ingredient{four}[2 ¼][\cu][about 307g]
+	    \ingredient{flour}[2 ¼][\cu][about 307g]
 		\ingredient{baking powder}[2][\tsp]
 		\ingredient{baking soda}[½][\tsp]
 		\ingredient{salt}[1][\tsp]
