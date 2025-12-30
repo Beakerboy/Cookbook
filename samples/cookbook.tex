@@ -57,13 +57,13 @@
 	}{%
         \edef\ingredient@output{\ingredient@unit}%
 	}%
-    \ifdefempty{\ingredient@name}{}{%
-        \ifdefempty{\ingredient@output}{%
-            \edef\ingredient@output{\ingredient@name}%
-        }{%
-            \edef\ingredient@output{\ingredient@output\space\ingredient@name}%
-        }%
+
+    \ifdefempty{\ingredient@output}{%
+        \edef\ingredient@output{\ingredient@name}%
+    }{%
+        \edef\ingredient@output{\ingredient@output\space\ingredient@name}%
     }%
+
     % Output the accumulated main part
     \textit{\small \ingredient@qty} & \textit{\small \ingredient@output}%
     % Add note with comma separator if present
