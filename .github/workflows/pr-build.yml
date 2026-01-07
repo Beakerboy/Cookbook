@@ -19,9 +19,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-extra texlive-fonts-extra texlive-luatex texlive-lang-french latexmk fonts-noto-color-emoji
-          wget https://github.com/AshDevFr/latex-cookbook-template/archive/refs/tags/v2.0.0.tar.gz
-          tar -xzf v2.0.0.tar.gz
-          mv latex-cookbook-template-2.0.0 latex-cookbook-template
+          wget https://github.com/AshDevFr/latex-cookbook-template/archive/refs/tags/v3.0.0.tar.gz
+          tar -xzf v3.0.0.tar.gz
+          mv latex-cookbook-template-3.0.0 latex-cookbook-template
           rm -rf latex-cookbook-template/images/recipes
           rm -rf latex-cookbook-template/samples
           cp -r ./samples latex-cookbook-template
