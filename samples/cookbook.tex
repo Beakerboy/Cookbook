@@ -1,4 +1,5 @@
 \documentclass[
+    ingredientstyle=tabular,
 	letterpaper,
 	10pt,
 	twoside
@@ -14,6 +15,23 @@
 % 1/5-
 % 1/6-⅙
 % 1/8-⅛ 3/8-⅜
+
+\makeatletter
+
+% Helper command to format ingredients for tabular style
+% Format: <ingredient name>[quantity][unit][note]
+% Output: <quantity> <unit> & <ingredient name>, <note> \\
+\RenewDocumentCommand{\ingredient@formattabular}{m m m m}{%
+	\textit{\small%
+		\ifblank{#2}{}{#2}
+	} & \textit{\small%
+	    \ifblank{#3}{}{#3\ }%
+		#1%
+		\ifblank{#4}{}{,\ #4}%
+	} \\[\recipe@ingredientitemsep]%
+}
+
+\makeatother
 
 \begin{document}
 
@@ -196,8 +214,6 @@
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Breakfast, Pizza, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Crust}
@@ -405,8 +421,6 @@
 	difficulty = {Beginner},
 	origin = {USA},
 	% tags = {Dessert, Cookies, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{long grain rice}[2][\cu]
@@ -442,8 +456,6 @@
 	difficulty = {Beginner},
 	origin = {USA},
 	% tags = {Dessert, Cookies, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
         \ingredient{unsalted butter}[1][\tbl]
@@ -551,8 +563,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {Mexico},
 	tags = {Mexican, Quick, Slow Cooker},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{salsa}[1][(16 ounce) jar]
@@ -582,8 +592,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	% origin = {USA},
 	tags = {Breakfast, Pizza, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Brine}
@@ -658,8 +666,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {Italy},
 	tags = {Italian, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{grated fresh Parmesan cheese}[⅓][\cu (1½ ounces)][divided]
@@ -699,9 +705,8 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	% origin = {USA},
 	tags = {Sandwich, Chicken},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	extrainstructioninfo = {The chicken and sauce can be made up to two days ahead and stored in the refrigerator.},
+	ingredientstyle={compact},
 	ingredients = {
 	    \begin{minipage}[t]{.32\textwidth}
 	    \ingredientsection{Chicken}
@@ -756,8 +761,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Grilled},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	extrainstructioninfo = {Total time does not include 1 day marinating time.},
 	ingredients = {
 	    \ingredient{family-size tea bags}[2]
@@ -792,8 +795,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Slow-Cooker},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	extrainstructioninfo = {To make in a slow cooker, prepare through Step Place beef mixture in an electric slow cooker. Cover and cook on HIGH for 5 hours.},
 	ingredients = {
 	    \ingredient{olive oil}[2][\tsp]
@@ -834,8 +835,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Slow-Cooker},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{chopped shallots}[½][\cu]
@@ -877,8 +876,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	cookingtime = {8 hr},
 	difficulty = {Beginner},
 	origin = {USA},
-	tags = {Sauce, Pasta, Slow-Cooker},
-	spicy = {yes},
+	tags = {Spicy, Sauce, Pasta, Slow-Cooker},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{olive oil}[1][\tbl]
@@ -918,8 +916,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	% origin = {USA},
 	tags = {Pasta},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Sauce}
@@ -970,8 +966,6 @@ Sprinkle with cheese.}
 	 difficulty = {Beginner},
 	 origin = {USA},
 	 tags = {Slow-Cooker},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {},
 	 ingredients = {
 	     \ingredient{boneless, skinless chicken thighs}[1¼][lb]
@@ -1003,8 +997,6 @@ Sprinkle with cheese.}
 	difficulty = {Beginner},
 	origin = {Tex-Mex},
 	tags = {Tex-Mex, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {},
 	ingredients = {
 	    \ingredientsection{Sauce}
@@ -1053,9 +1045,7 @@ Sprinkle with cheese.}
 	cookingtime = {30 mins},
 	difficulty = {Beginner},
 	% origin = {USA},
-	% tags = {Slow-Cooker},
-	vegetarian = {yes},
-	% spicy = {yes},
+    tags = {Vegetarian},
 	% extrainstructioninfo = {},
 	ingredients = {
 	    \ingredient{bell pepper (any color)}[1][][finely sliced]
@@ -1107,9 +1097,7 @@ Sprinkle with cheese.}
 	cookingtime = {50 mins},
 	difficulty = {Beginner},
 	origin = {USA},
-	% tags = {Slow-Cooker},
-	vegetarian = {yes},
-	% spicy = {yes},
+	% tags = {Vegetarian},
 	% extrainstructioninfo = {},
 	ingredients = {
 	    \ingredient{cold butter}[6][\tbl][cut into small pieces, plus more for greasing pan]
@@ -1191,13 +1179,12 @@ Sprinkle with cheese.}
 	% difficulty = {Beginner},
 	% origin = {USA},
 	% tags = {Slow-Cooker},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {},
 	% ingredients = {
 	%     \ingredient{}[][]
 	% },
 	% instructions = {
 	%     \instruction{}
-	% }
+	% },
+	% equipment={Item1, Item2, Item3}
 % }
