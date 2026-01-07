@@ -1,4 +1,5 @@
 \documentclass[
+    ingredientstyle=tabular,
 	letterpaper,
 	10pt,
 	twoside
@@ -14,6 +15,24 @@
 % 1/5-
 % 1/6-⅙
 % 1/8-⅛ 3/8-⅜
+
+% Helper command to format ingredients for tabular style
+% Format: <ingredient name>[quantity][unit][note]
+% Output: <quantity> <unit> & <ingredient name>, <note> \\
+\RenewDocumentCommand{\ingredient@formattabular}{m m m m}{%
+	\textit{\small%
+		\ifblank{#2}{}{#2}
+	} & %
+		\ifblank{#2}{}{%
+			\ifblank{#3}{}{ }%
+		}%
+		\ifblank{#3}{}{#3}%
+	} & \textit{\small%
+	    \ifblank{#3}{}{#3\ }%
+		#1%
+		\ifblank{#4}{}{,\ #4}%
+	} \\[\recipe@ingredientitemsep]%
+}
 
 \begin{document}
 
@@ -675,7 +694,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 }
 
 \recipe{%
-    layout={simple},
     image={../images/recipes/pulled_chicken.jpg},
     columnratio={0.25, 0.75},
 	title = {Pulled Chicken Sandwiches},
@@ -688,6 +706,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	% origin = {USA},
 	tags = {Sandwich, Chicken},
 	extrainstructioninfo = {The chicken and sauce can be made up to two days ahead and stored in the refrigerator.},
+	ingredientstyle={compact},
 	ingredients = {
 	    \begin{minipage}[t]{.32\textwidth}
 	    \ingredientsection{Chicken}
