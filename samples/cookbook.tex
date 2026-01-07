@@ -24,11 +24,6 @@
 \RenewDocumentCommand{\ingredient@formattabular}{m m m m}{%
 	\textit{\small%
 		\ifblank{#2}{}{#2}
-	} & %
-		\ifblank{#2}{}{%
-			\ifblank{#3}{}{ }%
-		}%
-		\ifblank{#3}{}{#3}%
 	} & \textit{\small%
 	    \ifblank{#3}{}{#3\ }%
 		#1%
