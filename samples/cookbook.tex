@@ -1,4 +1,5 @@
 \documentclass[
+    ingredientstyle=tabular,
 	letterpaper,
 	10pt,
 	twoside
@@ -6,20 +7,32 @@
 \edef\tsp{t}
 \edef\tbl{T}
 \edef\cu{c}
+\edef\oz{oz}
+
 
 % 1/2-½
 % 1/3-⅓ 2/3-⅔
 % 1/4-¼ 3/4-¾
+% 1/5-
 % 1/6-⅙
 % 1/8-⅛ 3/8-⅜
 
-\RenewDocumentCommand{\ingredient}{m O{} O{} O{}}{
-	\iffirstingredientsection%
-		\firstingredientsectionfalse%
-	\fi%
-	\item
-	\ingredient@formatmulti{#1}{#2}{#3}{#4}%
-} % Format individual recipe ingredient entries
+\makeatletter
+
+% Helper command to format ingredients for tabular style
+% Format: <ingredient name>[quantity][unit][note]
+% Output: <quantity> <unit> & <ingredient name>, <note> \\
+\RenewDocumentCommand{\ingredient@formattabular}{m m m m}{%
+	\textit{\small%
+		\ifblank{#2}{}{#2}
+	} & \textit{\small%
+	    \ifblank{#3}{}{#3\ }%
+		#1%
+		\ifblank{#4}{}{,\ #4}%
+	} \\[\recipe@ingredientitemsep]%
+}
+
+\makeatother
 
 \begin{document}
 
@@ -58,6 +71,49 @@
 %----------------------------------------------------------------------------------------
 
 \maketoc
+
+%----------------------------------------------------------------------------------------
+%	SPICES CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Spices and Sauces},
+	bgcolor={yellow},
+	image={../images/recipes/Spices.png},
+	layout={right}
+}
+
+\recipe{%
+	% layout={simple},
+	image = {../images/recipes/IMG_9695.jpeg},
+	imageheight={0.25\paperheight},
+	imageoverlayspace={0.2\paperheight},
+	title = {Taco Seasoning},
+	description = {Homemade taco seasoning is easy to make, cheaper than the packets, and gives you the flexibility to experiment with new flavors or different spice levels. Buy dried whole chilis from a hispanic market and grind them in a spice grinder. Toasting the cumin and chili powders can add another layer of flavor. Good chilis to try include, pasilla, guijillo, nuevo mexico, ancho, and chipotle. This receipe makes enough seasoning for 1 pound of ground beef. From The Pioneer Woman.},
+	serves = {1},
+	preptime = {5 mins},
+	cookingtime = {5 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Spices},
+	indexes = {Taco Seasoning},
+	ingredients = {
+	    \ingredient{assorted chili powders}[2][\tsp]
+		\ingredient{cumin}[1½][\tsp]
+		\ingredient{dried oregano}[1][\tsp]
+		\ingredient{paprika}[½][\tsp]
+		\ingredient{crushed red pepper}[½][\tsp]
+		\ingredient{salt}[½][\tsp]
+		\ingredient{garlic powder}[¼][\tsp]
+		\ingredient{onion powder}[¼][\tsp]
+		\ingredient{black pepper}[¼][\tsp]
+		},
+	instructions = {
+	    \instruction{Grind whole chilis into a fine powder in a spice grinder. Toast if desired.}
+		\instruction{Toast whole cumin prior to grinding if desired.}
+		\instruction{Mix all ingredients.}
+	}
+}
 
 %----------------------------------------------------------------------------------------
 %	BREAKFAST CHAPTER PAGE
@@ -121,7 +177,7 @@
     image = {../images/recipes/hash.jpeg},
 	title = {Bacon, Ham, and Egg Hash},
 	indexes = {Hash, Recipes!Breakfast, Potato, Eggs, Quick meals},
-	description = {The bacon seasons the potatoes in this hearty skillet meal. Make it for a weekend breakfast, and serve with fresh fruit.},
+	description = {The bacon seasons the potatoes in this hearty skillet meal. Make it for a weekend breakfast, and serve with fresh fruit. From Midwest Living.},
 	serves = {4},
 	preptime = {5 mins},
 	cookingtime = {30 mins},
@@ -152,19 +208,17 @@
     columnratio={0.35, 0.65},
 	title = {Gravy Pizza},
 	indexes = {Pizza, Eggs, Recipes!Breakfast},
-	description = {Recipe Description here.},
+	description = {Inspired from a school breakfast favorite at Stamping Ground Elementary.},
 	serves = {6},
 	preptime = {15 mins},
 	cookingtime = {10 mins},
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Breakfast, Pizza, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
-	extrainstructioninfo = {Place additional comments here.},
+	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Crust}
-	    \ingredient{four}[2 ¼][\cu][about 307g]
+	    \ingredient{flour}[2 ¼][\cu][about 307g]
 		\ingredient{baking powder}[2][\tsp]
 		\ingredient{baking soda}[½][\tsp]
 		\ingredient{salt}[1][\tsp]
@@ -189,6 +243,65 @@
 	}
 }
 
+\recipe{%
+	% layout={simple},
+	image = {../images/recipes/pancake.jpg},
+	imageheight={0.25\paperheight},
+	imageoverlayspace={0.2\paperheight},
+	title = {Buttermilk Pancakes},
+	description = {Pancakes are the hero of the breakfast table, and their very taste can even be described as ``deeply breakfasty'': eggy, salty, just this side of sweet. A little indulgent and yet still somehow appropriate first thing in the morning, those fluffy stacks with crisped edges, dripping with maple syrup, are everything you want, exactly when you want them. Here is how to get to them right every time, whether it's a lazy Sunday morning or a hurried weekday. From the New York Times.},
+	serves = {8},
+	preptime = {15 mins},
+	cookingtime = {10 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Breakfast},
+	indexes = {Pancakes, Recipes!Breakfast, American cuisine},
+	ingredients = {
+	    \ingredient{all-purpose flour}[2][\cu]
+		\ingredient{sugar}[3][\tbl]
+	    \ingredient{baking powder}[1½][\tsp]
+	    \ingredient{baking soda}[1½][\tsp]
+	    \ingredient{kosher salt}[1¼][\tsp]
+	    \ingredient{buttermilk}[2½][\cu]
+	    \ingredient{large eggs}[2][]
+	    \ingredient{unsalted butter}[3][\tbl][melted]
+	    \ingredient{Vegetable, canola, or coconut oil for the pan}[][]
+		},
+	instructions = {
+	    \instruction{Heat the oven to 325 degrees. Whisk flour, sugar, baking powder, baking soda and kosher salt together in a bowl. Using the whisk, make a well in the center. Pour the buttermilk into the well and crack eggs into buttermilk. Pour the melted butter into the mixture. Starting in the center, whisk everything together, moving towards the outside of the bowl, until all ingredients are incorporated. Do not overbeat (lumps are fine). The batter can be refrigerated for up to one hour.}
+		\instruction{Heat a large nonstick griddle or skillet, preferably cast-iron, over low heat for about 5 minutes. Add 1 tablespoon oil to the skillet. Turn heat up to medium–low and using a measuring cup, ladle ⅓ cup batter into the skillet. If you are using a large skillet or a griddle, repeat once or twice, taking care not to crowd the cooking surface.}
+		\instruction{Flip pancakes after bubbles rise to surface and bottoms brown, about 2 to 4 minutes. Cook until the other sides are lightly browned. Remove pancakes to a wire rack set inside a rimmed baking sheet, and keep in heated oven until all the batter is cooked and you are ready to serve.}
+	}
+}
+
+\recipe{%
+	% layout={simple},
+	%image = {../images/recipes/pancake.jpg},
+	%imageheight={0.25\paperheight},
+	%imageoverlayspace={0.2\paperheight},
+	title = {Cinnamon Omelette},
+	description = {This simple breakfast was a staple in the Belanger family. The consistancy is like a thick crepe or a British pancake.},
+	serves = {1},
+	preptime = {15 mins},
+	cookingtime = {5 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Breakfast},
+	indexes = {Pancakes, Recipes!Breakfast, American cuisine},
+	ingredients = {
+	    \ingredient{all-purpose flour}[½][\cu]
+		\ingredient{milk}[½][\cu]
+	    \ingredient{egg}[1]
+	    \ingredient{cinnamom}[1½][\tsp][optional]
+	    \ingredient{cinnamon sugar}[¾][\tsp]
+		},
+	instructions = {
+	    \instruction{Whip together the egg and milk, then whisk in the flour and optional cinnamon.}
+		\instruction{Heat a large skillet over medium heat and coat with cooking spray. Pour in all the batter and let it cook until the top begins to set. Flip and cook until fully set.}
+		\instruction{Slide into a plate and sprinkle with cannamon sugar.}
+	}
+}
 %----------------------------------------------------------------------------------------------------------
 
 
@@ -299,7 +412,7 @@
 	description = {Sourdough bread gives the stuffing a tangier flavor than French bread, but you can use the latter in a pinch. From Cooking Light.},
 	serves = {12},
 	ingredients = {
-	    \ingredient{8 \cu (½-inch) cubed sourdough bread (about 12 ounces)}
+	    \ingredient{(½-inch) cubed sourdough bread}[8][\cu][about 12 ounces)]
         \ingredient{turkey Italian sausage}[1][pound]
         \ingredient{Cooking spray}
         \ingredient{chopped onion (about 2 pounds)}[5][\cu]
@@ -329,15 +442,13 @@
     columnratio={0.35, 0.65},
 	title = {Spanish Rice},
 	indexes = {Spanish Rice, Rice!Spanish Rice, Mexican cuisine, Quick meals},
-	description = {Restaurant-Style Spanish Rice (aka Mexican Rice), that is easy to make and tastes like it came straight from the restaurant, and is the best side dish to any Mexican entree.},
+	description = {Restaurant-Style Spanish Rice (aka Mexican Rice), that is easy to make and tastes like it came straight from the restaurant, and is the best side dish to any Mexican entree. From Lil' Luna.},
 	serves = {12},
 	preptime = {5 mins},
 	cookingtime = {40 mins},
 	difficulty = {Beginner},
 	origin = {USA},
 	% tags = {Dessert, Cookies, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{long grain rice}[2][\cu]
@@ -372,9 +483,7 @@
 	cookingtime = {30 mins},
 	difficulty = {Beginner},
 	origin = {USA},
-	tags = {Dessert, Cookies, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
+	% tags = {Dessert, Cookies, Quick, Baked},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
         \ingredient{unsalted butter}[1][\tbl]
@@ -471,19 +580,46 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 
 \recipe{%
     % layout={simple},
+    image={../images/recipes/cilantro_lime_chicken.jpg},
+    columnratio={0.35, 0.65},
+	title = {Slow Cooker Lime Cilantro Chicken},
+	indexes = {Chicken!Lime Cilantro, Slow Cooker, Recipes!Entree, Lime Cilantro Chicken},
+	description = {This slow cooker cilantro-lime chicken is bursting with flavor. Try it in tacos for a nice change from plain chicken. From Allrecipes.},
+	serves = {4},
+	preptime = {15 mins},
+	cookingtime = {4 hr},
+	difficulty = {Beginner},
+	origin = {Mexico},
+	tags = {Mexican, Quick, Slow Cooker},
+	% extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredient{salsa}[1][(16 ounce) jar]
+		\ingredient{dry taco seasoning mix}[1][(1.25 ounce) package]
+	    \ingredient{medium limes}[2][][juiced]
+	    \ingredient{chopped fresh cilantro}[3][\tbl]
+	    \ingredient{skinless, boneless chicken thighs}[3][pounds]
+	},
+	instructions = {
+	    \instruction{Gather all ingredients.}
+	    \instruction{Stir salsa, taco seasoning, lime juice, and cilantro together in a slow cooker until well combined. Add chicken and spoon salsa mixture over top to coat.}
+	    \instruction{Cover and cook until chicken is no longer pink in the center and the juices run clear, on Low for 6 to 8 hours or High for 4 hours. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C).}
+		\instruction{Shred chicken in the crock with two forks, then mix with the sauce.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
     % image={../images/recipes/foo.jpg},
     columnratio={0.35, 0.65},
 	title = {Apple Cider-Brined Turkey with Savory Herb Gravy},
 	indexes = {Pizza, Eggs, Recipes!Breakfast},
-	description = {Recipe Description here.},
+	description = {The combination of apple cider and orange juice gives the drippings a depth of sweetness, creating the tastiest gravy. From Cooking Light.},
 	serves = {12},
 	preptime = {15 mins},
 	cookingtime = {10 mins},
 	difficulty = {Beginner},
 	% origin = {USA},
 	tags = {Breakfast, Pizza, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Brine}
@@ -544,6 +680,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 		\instruction{Place flour in a medium saucepan; add 1/4 cup cooking liquid, stirring with a whisk until smooth. Add remaining cooking liquid, turkey drippings, salt, and pepper; bring to a boil, stirring frequently. Reduce heat; simmer 5 minutes or until slightly thickened.}
 	}
 }
+
 \recipe{%
     % layout={simple},
     image={../images/recipes/herbed_chicken_parmesan.jpg},
@@ -557,9 +694,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {Italy},
 	tags = {Italian, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
-	extrainstructioninfo = {Place additional comments here.},
+	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{grated fresh Parmesan cheese}[⅓][\cu (1½ ounces)][divided]
 	    \ingredient{dry breadcrumbs}[¼][\cu]
@@ -573,10 +708,10 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	    \ingredient{balsamic vinegar}[2][\tsp]
 	    \ingredient{black pepper}[¼][\tsp]
 	    \ingredient{shredded provolone cheese}[⅓][\cu (1½ ounces)]
-		\ingredient{orzo}
-		\ingredient{broccoli}
-		\ingredient{lemon zest}
-		\ingredient{garlic}
+		% \ingredient{orzo}
+		% \ingredient{broccoli}
+		% \ingredient{lemon zest}
+		% \ingredient{garlic}
 	},
 	instructions = {
 	    \instruction{Preheat broiler.}
@@ -598,9 +733,8 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	% origin = {USA},
 	tags = {Sandwich, Chicken},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	extrainstructioninfo = {The chicken and sauce can be made up to two days ahead and stored in the refrigerator.},
+	ingredientstyle={compact},
 	ingredients = {
 	    \begin{minipage}[t]{.32\textwidth}
 	    \ingredientsection{Chicken}
@@ -644,6 +778,40 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 
 \recipe{%
     % layout={simple},
+    image={../images/recipes/sweet_tea_chicken.jpg},
+    columnratio={0.35, 0.65},
+	title = {Sweet Tea-Brined Chicken},
+	indexes = {},
+	description = {For the tastiest chicken ever, brine a whole cut-up chicken in the South's signature beverage--sweet tea with lemon. From Southern Living.},
+	serves = {6},
+	preptime = {30 mins},
+	cookingtime = {1 hr 20 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Grilled},
+	extrainstructioninfo = {Total time does not include 1 day marinating time.},
+	ingredients = {
+	    \ingredient{family-size tea bags}[2]
+	    \ingredient{firmly packed light brown sugar}[½][\cu]
+	    \ingredient{kosher salt}[¼][\cu]
+	    \ingredient{small sweet onion}[1][thinly sliced]
+	    \ingredient{lemon}[1][][thinly sliced]
+	    \ingredient{garlic cloves}[3][][halved]
+	    \ingredient{(6-inch) fresh rosemary sprigs}[2]
+	    \ingredient{freshly cracked pepper}[1][\tbl]
+	    \ingredient{ice cubes}[2][\cu]
+	    \ingredient{(3½-to 4-lb.) cut-up whole chicken}[1][]
+	},
+	instructions = {
+	    \instruction{Bring 4 cups water to a boil in a 3-qt. heavy saucepan; add tea bags. Remove from heat; cover and steep 10 minutes.}
+	    \instruction{Discard tea bags. Stir in sugar and next 6 ingredients, stirring until sugar dissolves. Cool completely (about 45 minutes); stir in ice. (Mixture should be cold before adding chicken.)}
+	    \instruction{Place tea mixture and chicken in a large zip-top plastic freezer bag; seal. Place bag in a shallow baking dish and chill 24 hours. Remove chicken from marinade, discarding marinade; pat chicken dry with paper towels.}
+	    \instruction{Light one side of grill, heating to 300° to 350° (medium) heat; leave other side unlit. Place chicken, skin side down, over unlit side, and grill, covered with grill lid, 20 minutes. Turn chicken, and grill, covered with grill lid, 20 minutes. Turn chicken, and grill, covered with grill lid, 40 to 50 minutes or until done. Transfer chicken, skin side down, to lit side of grill, and grill 2 to 3 minutes or until skin is crispy. Let stand 5 minutes before serving.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
     image={../images/recipes/beef_daube_provencal.jpg},
     columnratio={0.35, 0.65},
 	title = {Beef Daube Procençal},
@@ -655,8 +823,6 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	difficulty = {Beginner},
 	origin = {USA},
 	tags = {Slow-Cooker},
-	% vegetarian = {yes},
-	% spicy = {yes},
 	extrainstructioninfo = {To make in a slow cooker, prepare through Step Place beef mixture in an electric slow cooker. Cover and cook on HIGH for 5 hours.},
 	ingredients = {
 	    \ingredient{olive oil}[2][\tsp]
@@ -696,10 +862,8 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	cookingtime = {10 mins},
 	difficulty = {Beginner},
 	origin = {USA},
-	tags = {Breakfast, Pizza, Quick, Baked},
-	% vegetarian = {yes},
-	% spicy = {yes},
-	extrainstructioninfo = {Place additional comments here.},
+	tags = {Slow-Cooker},
+	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{chopped shallots}[½][\cu]
         \ingredient{thinly sliced peeled ginger}[⅓][\cu]
@@ -740,8 +904,7 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
 	cookingtime = {8 hr},
 	difficulty = {Beginner},
 	origin = {USA},
-	tags = {Sauce, Pasta, Slow-Cooker},
-	spicy = {yes},
+	tags = {Spicy, Sauce, Pasta, Slow-Cooker},
 	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredient{olive oil}[1][\tbl]
@@ -773,17 +936,15 @@ Fold sides of tortilla over filling. Garnish with cilantro sprigs, if desired. S
     % image={../images/recipes/foo.png},
     columnratio={0.35, 0.65},
 	title = {Gnocchi Bolognese},
-	indexes = {Beef, Stew, Recipes!Entree, Italian Cuisine},
+	indexes = {Pasta!Gnocchi, Recipes!Entree, Italian Cuisine},
 	description = {These feather-light Italian dumplings can be made from spinach, ricotta, polenta, or semolina flour, but are most commonly made from potatoes. Their thin grooves are perfect for catching the Bolognese sauce.},
 	serves = {6},
 	preptime = {15 mins},
 	cookingtime = {10 mins},
 	difficulty = {Beginner},
 	% origin = {USA},
-	tags = {Bolognese, Pasta!Gnocchi},
-	% vegetarian = {yes},
-	% spicy = {yes},
-	extrainstructioninfo = {Place additional comments here.},
+	tags = {Pasta},
+	% extrainstructioninfo = {Place additional comments here.},
 	ingredients = {
 	    \ingredientsection{Sauce}
 	    \ingredient{vegetable oil}[1][\tsp]
@@ -820,6 +981,177 @@ Sprinkle with cheese.}
 	}
 }
 
+ \recipe{%
+     % layout={simple},
+     image={../images/recipes/chili.jpg},
+     columnratio={0.35, 0.65},
+	 title = {Slow-Cooker Chicken Enchilada Chili},
+	 indexes = {Chili},
+	 description = {Chicken thighs are a pleasing change of pace in chili. Sour cream helps turn down the heat. From Betty Crocker.},
+	 serves = {6},
+	 preptime = {10 mins},
+	 cookingtime = {8 hr},
+	 difficulty = {Beginner},
+	 origin = {USA},
+	 tags = {Slow-Cooker},
+	% extrainstructioninfo = {},
+	 ingredients = {
+	     \ingredient{boneless, skinless chicken thighs}[1¼][lb]
+	     \ingredient{medium onion}[1][][chopped]
+	     \ingredient{medium yellow or green bell pepper}[1][][chopped]
+	     \ingredient{stewed tomatoes with garlic and onion}[2][14.5 oz cans][undrained]
+	     \ingredient{chili beans in sauce}[2][15 oz cans][undrained]
+	     \ingredient{mild red enchilada sauce}[1][10 oz can]
+	     \ingredient{sour cream}[⅓][\cu]
+	     \ingredient{chopped fresh cilantro}[2][\tbl]
+	 },
+	 instructions = {
+	     \instruction{Spray 4- to 5-quart slow cooker with cooking spray. Mix all ingredients except sour cream and cilantro in cooker.}
+	     \instruction{Cover and cook on Low heat setting 7 to 8 hours.}
+	     \instruction{Stir mixture to break up chicken. Top each serving with sour cream and cilantro.}
+	 }
+ }
+
+ \recipe{%
+    % layout={simple},
+    % image={../images/recipes/greenburrito.jpg},
+    columnratio={0.35, 0.65},
+	title = {Green Chile Chicken Smothered Burritos},
+	indexes = {Chicken!Green Chile Smothered Burritos},
+	description = {These Green Chile Chicken Smothered Burritos are a seriously delicious way to satisfy your craving for Mexican food. Simple ingredients, easy prep, incredible result! From Valeries Kitchen.},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {30 mins},
+	difficulty = {Beginner},
+	origin = {Tex-Mex},
+	tags = {Tex-Mex, Baked},
+	% extrainstructioninfo = {},
+	ingredients = {
+	    \ingredientsection{Sauce}
+	    \ingredient{vegetable oil}[2][\tbl]
+	    \ingredient{flour}[3][\tbl]
+	    \ingredient{low-sodium chicken broth}[1][\cu]
+	    \ingredient{green enchilada sauce}[1][14 oz can]
+	    \ingredient{ground cumin}[1][\tsp]
+	    \ingredient{salt}[¼][\tsp]
+	    \ingredient{freshly ground black pepper}[][][to taste]
+
+        \ingredientsection{Filling}
+	    \ingredient{shredded rotisserie chicken}[3][\cu]
+	    \ingredient{mild diced green chiles}[1][4 oz can][drained]
+	    \ingredient{sour cream}[½][\cu]
+	    \ingredient{shredded Monterey Jack cheese}[1][\cu]
+	    \ingredient{salt}[½][\tsp]
+	    \ingredient{freshly ground black pepper}[][][to taste]
+
+        \ingredientsection{Burrito}
+	    \ingredient{burrito size (10-inch) flour tortillas}[6]
+	    \ingredient{shredded cheese}[2][\cu]
+	    \ingredient{thinly sliced green onions}[¼][\cu]
+	    \ingredient{cilantro avocado, sour cream, hot sauce or salsa}
+	},
+	instructions = {
+	    \instruction{Heat vegetable oil in a medium saucepan over LOW heat. Whisk in the flour and cook, whisking constantly, for a minute or two until mixture is just beginning to get lightly golden brown. Whisk in the chicken broth, enchilada sauce, cumin, salt, and pepper. Increase heat to MEDIUM-HIGH and bring mixture to a boil. Reduce heat enough to keep mixture at a low simmer and whisk lightly until thickened. Remove from heat and set aside.}
+		\instruction{Combine chicken, sour cream, drained diced green chiles, and 1 cup shredded Monterey Jack cheese in a large mixing bowl. Season with salt and pepper.}
+		\instruction{Preheat oven to 350 degrees F. Coat a 13- x 9-inch baking dish with non-stick cooking spray.}
+		\instruction{Place the stack of 6 tortillas between two paper towels and heat in the microwave for 20 to 30 seconds to soften slightly.}
+		\instruction{To assemble burritos, divide the filling between tortillas, fold edges inward over the top of filling and roll up. Place seam side down in the prepared baking dish. Spoon the sauce over the top and cover the dish with foil.}
+		\instruction{Bake in preheated oven for 20 minutes. Remove foil and sprinkle burritos with shredded cheese. Return to oven and bake for an additional 10 minutes, or until cheese is melted and the sauce is bubbly around the edges.}
+		\instruction{Sprinkle with sliced green onions and serve with additional toppings of your choice.}
+	}
+ }
+
+ \recipe{%
+    % layout={simple},
+    image={../images/recipes/Sheet_pan_chow_mein.jpg},
+    columnratio={0.35, 0.65},
+	title = {Sheet Pan Chow Mein},
+	% indexes = {},
+	% description = {},
+	serves = {4},
+	preptime = {10 mins},
+	cookingtime = {30 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+    tags = {Vegetarian},
+	% extrainstructioninfo = {},
+	ingredients = {
+	    \ingredient{bell pepper (any color)}[1][][finely sliced]
+        \ingredient{carrot}[1][][peeled and finely sliced diagonally]
+        \ingredient{broccoli}[1][head][cut into florets, or bundle of broccolini, cut into 1- to 2-inch segments]
+        \ingredient{Kosher salt}
+        \ingredient{Olive oil or a neutral oil}
+        \ingredient{dried thin egg noodles}[1][9-ounce package]
+        \ingredient{baby corn}[1][8.8 oz can][drained]
+        \ingredient{asparagus, sugar snaps, or snow peas}[6][oz][trimmed and cut into 1 to 2-inch segments]
+        \ingredient{medium shallot}[1][][or 3 scallions, thinly sliced]
+        \ingredient{toasted sesame seeds}[2][\tbl][to finish]
+        \ingredient{toasted sesame oil}[1][\tbl]
+		\ingredientsection{Sauce}
+        \ingredient{toasted sesame oil}[1][\tbl]
+        \ingredient{soy sauce, tamari, or coconut aminos}[3][\tbl]
+        \ingredient{vegetarian stir-fry sauce}[1][\tbl][such as vegetarian oyster or hoisin sauce (optional)]
+        \ingredient{ground white pepper}[¼][\tsp]
+        \ingredient{garlic}[1][small clove][grated or minced]
+	},
+	instructions = {
+	    \instruction{Heat oven to 425°F. On a large baking sheet, toss the pepper, carrot, and broccoli with a splash of olive oil and season with salt. Roast for 10 minutes, until the vegetables start to soften.}
+		\instruction{Meanwhile, make the noodles: Bring a large saucepan of salted water to the boil. Add the egg noodles, and cook according to the packet instructions, or al dente, about four to five minutes. Drain and cool under cold running water. Drain well again and pat dry with a clean tea towel.}
+	    \instruction{Combine the soy seasoning ingredients in a small bowl.}
+	    \instruction{Remove the baking sheet and push the vegetables to the side. Add the noodles, corn and asparagus. Drizzle the noodles with sesame oil, season with more salt and toss well to coat. Return the tray to the oven and bake for another 15 to 18 minutes, until the noodles are crispy on the top and bottom. We are looking for a combination of crispy and non-crispy noodles.}
+	    \instruction{Remove the tray from the oven, drizzle over the soy seasoning and toss well. Scatter over the shallot and sesame seeds and serve.}
+	}
+}
+
+\recipe{%
+    image = {../images/recipes/Sushi.jpg},
+	title = {Sushi},
+	indexes = {Sushi},
+	description = {These can be rolled into inside out nori or to make a poke bowl. Source: justonecookbook.com.},
+	serves = {5 (10 rolls)},
+	preptime = {30 mins},
+	cookingtime = {20 mins},
+	difficulty = {Advanced},
+	origin = {Japan},
+	tags = {Sushi},
+	ingredients = {
+			\ingredientsection{Rice}
+			\ingredient{sushi rice (Calrose)}[4][rice cooker cups]
+			\ingredient{kombu}[2][2" squares]
+			\ingredient{sesoned rice vinegar}[4][\tbl]
+
+			\ingredientsection{Sushi Vinegar}
+			\ingredient{rice vinegar (unseasoned)}[½][\cu]
+			\ingredient{sugar}[¼][\cu]
+			\ingredient{kosher salt}[2][\tsp]
+
+			\ingredientsection{Spicy Mayo}
+			\ingredient{japanese mayo}[½][\cu]
+			\ingredient{sriracha}[2][\tbl]
+			\ingredient{wasabi}[1][\tsp]
+			\ingredient{soy sauce}[1][\tsp]
+
+			\ingredientsection{Sushi}
+			\ingredient{nori}[5][8x7 sheets][cut to 4x7]
+			\ingredient{english cucumber}[1][][]
+			\ingredient{imitation crab}[8][sticks]
+			\ingredient{avocado}[1][]
+			\ingredient{toasted sesame seeds}[5][\tbl]
+			\ingredient{black sesame seeds}[5][\tbl]
+		},
+	instructions = {
+	        \instructionsection{Preparing the Vinegar}
+			\instruction{Mix all ingredients and bring to a boil using the microwave. Stir until salt has dissolved}
+			\instructionsection{Preparing the mayo}
+			\instruction{Mix all ingredients}
+			\instructionsection{Preparing the Rice}
+			\instruction{Rinse rice with several chamges of water until water runs clear.}
+			\instruction{Add kombu to the rice and water in rice cooker and cook rice.}
+			\instruction{When complete, remove kombu and transfer rice into a large bowl. Add vinegar and stir until cool.}
+			\instructionsection{Rolling Sushi}
+			\instruction{Wrap bamboo mat with saran wrap.}
+		}
+}
 
 %----------------------------------------------------------------------------------------
 %	DESSERTS CHAPTER PAGE
@@ -830,7 +1162,81 @@ Sprinkle with cheese.}
 	image={../images/book/dessert.jpg},
 	layout={right}
 }
+\recipe{%
+    % layout={simple},
+    image = {../images/recipes/Cookie.jpg},
+    columnratio={0.35, 0.65},
+	title = {Chocolate Chip Cookies},
+	indexes = {Cookies},
+	description = {Jacques Torres' famous recipe.},
+	serves = {1½ dozen},
+	preptime = {2 days},
+	cookingtime = {20 mins},
+	difficulty = {Beginner},
+	% origin = {USA},
+	tags = {Cookies},
+	vegetarian = {yes},
+	% spicy = {yes},
+	% extrainstructioninfo = {Place additional comments here.},
+	ingredients = {
+	    \ingredient{cake flour}[8½][\oz][(about 2 cups minus 2 Tb)]
+	    \ingredient{bread flour}[8½][\oz][(about 1⅔ cups)]
+	    \ingredient{baking soda}[1¼][\tsp]
+	    \ingredient{baking powder}[1½][\tsp]
+	    \ingredient{coarse salt}[1½][\tsp]
+	    \ingredient{unsalted butter}[1¼][\cu][softened]
+	    \ingredient{light brown sugar}[10][\oz]
+	    \ingredient{granulated sugar}[8][\oz]
+	    \ingredient{large eggs}[2]
+	    \ingredient{vanilla extract}[2][\tsp]
+	    \ingredient{bittersweet chocolate discs}[1¼][lb]
+	    \ingredient{flaky sea salt}
 
+	},
+	instructions = {
+	    \instruction{Sift flours, baking soda, baking powder and salt into a large bowl. Set aside.}
+		\instruction{In a separate bowl, cream butter and sugars together until very pale and light, about 5 minutes. Add eggs, one at a time, mixing well between additions. Stir in the vanilla.}
+		\instruction{Reduce mixer speed to low, add dry ingredients and mix until just combined, 5 to 10 seconds.}
+		\instruction{Stir in chocolate pieces without breaking them.}
+		\instruction{Press plastic wrap against dough chill in the refrigerator for 24-72 hours. Dough can be used all at once, or in batches.}
+		\instruction{To bake, preheat oven to 350 degrees Fahrenheit. Scoop six 3 ½-ounce mounds of dough (the size of generous golf balls) onto a parchment paper lined baking mat. Flatten out any chocolate pieces that are poking up; it will make for a more attractive cookie. Sprinkle lightly with sea salt. Repeat with remaining dough.}
+		\instruction{Bake until golden brown, but still soft, about 18 to 20 minutes for large cookies, or 10 to 12 minutes for smaller cookies. Transfer sheet to a wire rack for 10 minutes, then remove cookies to another rack to cool further. Best eaten warm.}
+	}
+}
+
+\recipe{%
+    % layout={simple},
+    image={../images/recipes/rhubarb_crisp.jpg},
+    columnratio={0.35, 0.65},
+	title = {Rhubarb Crisp},
+	% indexes = {},
+	description = {When you think of rhubarb you probably think of strawberry-rhubarb pie, a quintessential spring dessert, especially if it’s made by someone who makes good pies. I usually manage around one pie crust annually, so I need alternatives. Thus, when the spring’s first rhubarb shows up, I adjust the execution and produce a crisp. If rhubarb is young and fresh, you can trim it in seconds. If it has fibrous outer strings, peel them off as you would those of celery. Toss the rhubarb with orange or lemon juice and zest, and only a little sugar. (You can also substitute strawberries for some of the rhubarb if you want the classic combination.) Blend the ingredients for the crisp topping in a food processor, crumble the topping over the rhubarb mixture, and bake — it is nearly effortless and as good or better than a pie. From The New York Times.},
+	serves = {6-8},
+	preptime = {30 mins},
+	cookingtime = {50 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	% tags = {Vegetarian},
+	% extrainstructioninfo = {},
+	ingredients = {
+	    \ingredient{cold butter}[6][\tbl][cut into small pieces, plus more for greasing pan]
+	    \ingredient{rhubarb}[2½ to 3][pounds][trimmed, tough strings removed, and cut into 1½-inch pieces (about 5 to 6 cups)]
+	    \ingredient{white sugar}[¼][\cu]
+	    \ingredient{orange or lemon juice}[1][\tbl]
+	    \ingredient{orange or lemon zest}[1][\tsp]
+	    \ingredient{brown sugar}[¾][\cu]
+	    \ingredient{all-purpose flour}[½][\cu]
+	    \ingredient{cinnamon}[½][\tsp][or to taste]
+	    \ingredient{salt}[][pinch]
+	    \ingredient{rolled oats}[½][\cu]
+	    \ingredient{pecans}[½][\cu]
+	},
+	instructions = {
+	    \instruction{Heat oven to 375 degrees. Grease an 8- or 9-inch square baking or gratin dish with a little butter. Toss rhubarb with white sugar, orange or lemon juice and zest, and spread in baking dish.}
+	    \instruction{Put the 6 tablespoons butter in a food processor along with brown sugar, flour, cinnamon and salt, and pulse for about 20 or 30 seconds, until it looks like small peas and just begins to clump together. Add oats and pecans and pulse just a few times to combine.}
+	    \instruction{Crumble the topping over rhubarb and bake until golden and beginning to brown, 45 to 50 minutes.}
+	}
+}
 %----------------------------------------------------------------------------------------
 %	CONVERSION TABLE
 %----------------------------------------------------------------------------------------
@@ -865,7 +1271,7 @@ Sprinkle with cheese.}
 		\textbf{From Our Kitchen to Yours:}\par
 		\vspace{0.01\textheight}
 		Start your morning right with our \textbf{Breakfast Casserole}—a family favorite that's both simple and satisfying. For a special weekend treat, you simply must try our \textbf{Gravy Pizza}, with its golden and perfectly fluffy crust.\newline\newline
-		When it comes to main courses, our \textbf{Gnocchi Bolognese} has been a inner tradition for decades, while the \textbf{Cider Brined Turkey} brings elegance to any Thanksgiving meal. And don't miss our family's favorite rice dish, Alton Brown's \textbf{Rice Pilaf} that is easy and quick to make.\newline\newline
+		When it comes to main courses, our \textbf{Gnocchi Bolognese} has been a dinner tradition for decades, while the \textbf{Cider Brined Turkey} brings elegance to any Thanksgiving meal. And don't miss our family's favorite rice dish, Alton Brown's \textbf{Rice Pilaf} that is easy and quick to make.\newline\newline
 		\textit{Each recipe includes detailed instructions, ingredient lists, and helpful tips to ensure your success in the kitchen.}
 	},
 	isbn={978-0-123456-78-9},
@@ -878,3 +1284,26 @@ Sprinkle with cheese.}
 }
 
 \end{document}
+
+% \recipe{%
+    % layout={simple},
+    % image={../images/recipes/.jpg},
+    % columnratio={0.35, 0.65},
+	% title = {},
+	% indexes = {},
+	% description = {},
+	% serves = {12},
+	% preptime = {15 mins},
+	% cookingtime = {10 mins},
+	% difficulty = {Beginner},
+	% origin = {USA},
+	% tags = {Slow-Cooker},
+	% extrainstructioninfo = {},
+	% ingredients = {
+	%     \ingredient{}[][]
+	% },
+	% instructions = {
+	%     \instruction{}
+	% },
+	% equipment={Item1, Item2, Item3}
+% }
